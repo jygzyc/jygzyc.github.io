@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="f1nWC9sjy3QXHnwrVQxHhTst-10xjST6uvSoroxLO0M">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.font.im/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic|Consolas:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"jygzyc.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="“百度杯” 2017年十一月场 CrackMe02">
+<meta property="og:type" content="article">
+<meta property="og:title" content="baidu-201711-CrackMe02">
+<meta property="og:url" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/index.html">
+<meta property="og:site_name" content="Ecool">
+<meta property="og:description" content="“百度杯” 2017年十一月场 CrackMe02">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/main1.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/main2.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/main3.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/main4.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/main5.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/jump.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/migong.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/calls.jpg">
+<meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/AES.jpg">
+<meta property="article:published_time" content="2018-11-13T13:38:46.000Z">
+<meta property="article:modified_time" content="2020-06-22T17:58:54.437Z">
+<meta property="article:author" content="jygzyc">
+<meta property="article:tag" content="writeup">
+<meta property="article:tag" content="ctf">
+<meta property="article:tag" content="reverse">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/main1.jpg">
+
+<link rel="canonical" href="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>baidu-201711-CrackMe02 | Ecool</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Ecool" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Ecool</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">little home</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a>
+
+  </li>
+        <li class="menu-item menu-item-photos">
+
+    <a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>photos</a>
+
+  </li>
+        <li class="menu-item menu-item-links">
+
+    <a href="/links" rel="section"><i class="fa fa-link fa-fw"></i>links</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+  <a href="https://github.com/jygzyc" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpeg">
+      <meta itemprop="name" content="jygzyc">
+      <meta itemprop="description" content="What I like">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ecool">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          baidu-201711-CrackMe02
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-13 21:38:46" itemprop="dateCreated datePublished" datetime="2018-11-13T21:38:46+08:00">2018-11-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-06-23 01:58:54" itemprop="dateModified" datetime="2020-06-23T01:58:54+08:00">2020-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/writeup/" itemprop="url" rel="index"><span itemprop="name">writeup</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/writeup/baidu-201711-CrackMe02/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/writeup/baidu-201711-CrackMe02/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <div class="post-description">“百度杯” 2017年十一月场 CrackMe02</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="environment"><a class="markdownIt-Anchor" href="#environment"></a> environment</h2>
+<blockquote>
+<p>后面会用到python的环境，在这里就先配好，个人用的是 python2.7 的环境，配置如下：</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li>先到官网上下好<a href="https://www.python.org/downloads/release/python-2715/" target="_blank" rel="noopener">python 2.7</a>的安装包，安装。</li>
+<li>用 <code>pip install pycrypto</code>安装加密模块，如果出现<code>error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27</code>，我们就去<a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266" target="_blank" rel="noopener">安装</a>一下Windows对python的支持。</li>
+<li>上述都做完之后，打开<em>python</em>，输入 <code>from Crypto.Cipher import AES</code>，如果运行没有报错，就是配置成功了。</li>
+</ul>
+<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
+<blockquote>
+<p>做之前可以去看看<a href="https://www.ichunqiu.com/course/56677" target="_blank" rel="noopener">大表哥的整理思路的视频</a>，确实很厉害。<br />
+跑这道题算是我学od这么长时间以来最复杂的一个了……跑到吐血</p>
+</blockquote>
+<h3 id="找切入点"><a class="markdownIt-Anchor" href="#找切入点"></a> 找切入点</h3>
+<ul>
+<li>打开这道题，发现是一个checkSN，我们打开IDA查看导入地址表和函数引用，这里常用的有两个，分别是 <code>GetWindowTextA</code>和<code>GetDlgItemTextA</code>，我们初步查看后发现<code>GetDlgItemTextA</code>所在的地方是函数的主体，而且整体只有这一个函数，我们用od在<code>GetDlgItemTextA</code>下bp，f9运行。</li>
+</ul>
+<h3 id="梳理函数逻辑"><a class="markdownIt-Anchor" href="#梳理函数逻辑"></a> 梳理函数逻辑</h3>
+<ul>
+<li>随便输入几个字符CheckSN，在这里我输入的是“123456”。</li>
+<li>一直往下跑，直到 <code>GetDlgItemTextA</code> 函数出现。</li>
+</ul>
+<img data-src="main1.jpg" width=40%>
+<blockquote>
+<p>函数往上是在初始化堆栈空间，到了下面的<code>call</code>，能在内存看见输入的’123456‘以16进制放在内存中。<br />
+具体来说应该是’12  34  56‘。</p>
+</blockquote>
+<ul>
+<li>继续跟踪，我们在00402653处进入AES解密函数。</li>
+</ul>
+<img data-src="main2.jpg" width=40%>
+<img data-src="main3.jpg" width=40%>
+<img data-src="main4.jpg" width=40%>
+<blockquote>
+<p>先进行AES分组解密，密钥为B1nGzL[4st-TeAm]，IV向量16进制为000102030405060708090A0B0C0D0E0F，使用CBC模式。如果输入转成的16进制长度不是16的倍数，则分组觖密后剩下的会进行ECB模式的解密，密钥不变。 回主流程。</p>
+</blockquote>
+<img data-src="main5.jpg" width=40%>
+<ul>
+<li>回到主流程后，得到结果进行base64解码，地址为00401990；之后进入迷宫选择，这里我们看IDA的解析会更清楚一点。</li>
+</ul>
+<img data-src="jump.jpg" width=40%>
+<blockquote>
+<p>swich选择。其原值必须为&quot;82QS&quot;中的一个，不然就是进入default，这是一条死亡之路。 switch中的call循环做完之后，在0040273A 检查0018F1E4 是否为1，为1就game over。整理一下内存查看迷宫如下：</p>
+</blockquote>
+<img data-src="migong.jpg" width=40%>
+<blockquote>
+<p>8,2保特横向位置不变，纵向分别随着循环向上一格和向下一格；Q，S保持纵向位置不变，横向分别向左一格和向右一格 ;c3为终点，左上ff为起点，沿着0走，路径选择结果为27S281S182S327S287S323Q124S281S1。参与运算的定值为0x2f。依据奇数位字符选择switch case，其右边的偶数位字符-0x30,结果进行累加，最后累加值就是0x2f。</p>
+</blockquote>
+<ul>
+<li>跑完之后，发现只累加到了0x2e，还差1，那么这个1到哪里去找呢？我们打开‘s’的case，发现有一点不一样：</li>
+</ul>
+<img data-src="calls.jpg" width=40%>
+<blockquote>
+<p>在00402923处，就是比较取值是否为0的，别的call检查失败直接置标志返回，这里跳到了0040293B，检查取数是否为0xFF，如果是直接返回，不置失败标记。正好到终点处右边为0xff，且S循环一次是右移一格，取数，所以最后加上S1即可。</p>
+</blockquote>
+<ul>
+<li>此题多解原因是如果偶数为0x30，则不进行循环，0x2f累加值也为零，对最后的正确流程没有影响。所以是可以随意附加&quot;20&quot;、“80”、“Q0”、'S0&quot;，从而产生多解。</li>
+</ul>
+<h3 id="解题脚本"><a class="markdownIt-Anchor" href="#解题脚本"></a> 解题脚本</h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">key = <span class="string">'B1nGzL[4st-TeAm]'</span></span><br><span class="line">iv = <span class="string">'\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F'</span></span><br><span class="line">path = <span class="string">'27S281S182S327S287S323Q124S281S1'</span>.encode(<span class="string">'base64'</span>).strip()</span><br><span class="line">m = path + <span class="string">'\x00'</span>*<span class="number">4</span></span><br><span class="line">cryptor = AES.new(key,AES.MODE_CBC,iv)</span><br><span class="line">cryptortext = cryptor.encrypt(m)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"==================================================="</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'cryptortext:'</span>+cryptortext.encode(<span class="string">'hex'</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'==================================================='</span></span><br></pre></td></tr></table></figure>
+<p>结果得到<code>flag{235cfe4e617b3656758e14ca51d981a9e5623be7424a244ae93d8a48cf9cf7f0a84649f35fdd9a47e7afef01dfc9f639}</code></p>
+<h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3>
+<ul>
+<li>关于AES的识别，还是直接用IDA的插件来的比较实在，不过最好是能识别出算法的特征，就像下面这个（个人瞎猜，欢迎大佬指正）：</li>
+</ul>
+<img data-src="AES.jpg" width=40%>
+<blockquote>
+<p>感觉已经有一点AES的影子了……</p>
+</blockquote>
+<ul>
+<li>迷宫问题还是reverse中的热门问题……虽然很难……</li>
+</ul>
+<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe02.exe" target="_blank" rel="noopener">download</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>jygzyc
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/" title="baidu-201711-CrackMe02">https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/writeup/" rel="tag"># writeup</a>
+              <a href="/tags/ctf/" rel="tag"># ctf</a>
+              <a href="/tags/reverse/" rel="tag"># reverse</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/writeup/ISC%E8%AE%AD%E7%BB%83%E8%B5%9B_2016_phrackCTF_Classical%20CrackMe/" rel="prev" title="ISC训练赛_2016_phrackCTF_Classical CrackMe">
+      <i class="fa fa-chevron-left"></i> ISC训练赛_2016_phrackCTF_Classical CrackMe
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/" rel="next" title="配置环境问题集">
+      配置环境问题集 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#environment"><span class="nav-number">1.</span> <span class="nav-text"> environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step"><span class="nav-number">2.</span> <span class="nav-text"> step</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#找切入点"><span class="nav-number">2.1.</span> <span class="nav-text"> 找切入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梳理函数逻辑"><span class="nav-number">2.2.</span> <span class="nav-text"> 梳理函数逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题脚本"><span class="nav-number">2.3.</span> <span class="nav-text"> 解题脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感想"><span class="nav-number">2.4.</span> <span class="nav-text"> 感想</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="jygzyc"
+      src="/images/avatar.jpeg">
+  <p class="site-author-name" itemprop="name">jygzyc</p>
+  <div class="site-description" itemprop="description">What I like</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/jygzyc" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;jygzyc" rel="noopener" target="_blank"><i class="github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:1348395721@qq.com" title="E-Mail → mailto:1348395721@qq.com" rel="noopener" target="_blank"><i class="envelope fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://stackoverflow.com/jygzyc" title="StackOverflow → https:&#x2F;&#x2F;stackoverflow.com&#x2F;jygzyc" rel="noopener" target="_blank"><i class="stack-overflow fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/jygzyc" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;jygzyc" rel="noopener" target="_blank"><i class="instagram fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+
+    <div class="links-of-blogroll motion-element links-of-blogroll-block">
+      <div class="links-of-blogroll-title">
+        <!-- modify icon to fire by szw -->
+        <i class="fa fa-history fa-" aria-hidden="true"></i>
+        近期文章
+      </div>
+      <ul class="links-of-blogroll-list">
+
+        
+        
+          <li>
+            <a href="/program/c/C-Class-1/" title="C++ 类解析（1）" target="_blank">C++ 类解析（1）</a>
+          </li>
+        
+          <li>
+            <a href="/UEFI/HelloUEFI/" title="UEFI原理与实践笔记-Hello UEFI" target="_blank">UEFI原理与实践笔记-Hello UEFI</a>
+          </li>
+        
+          <li>
+            <a href="/bitcoin/bitcoin-address/" title="比特币密钥和地址" target="_blank">比特币密钥和地址</a>
+          </li>
+        
+          <li>
+            <a href="/program/c/c-Vector%E8%A7%A3%E6%9E%90/" title="C++ Vector解析" target="_blank">C++ Vector解析</a>
+          </li>
+        
+      </ul>
+    </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2018 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">jygzyc</span>
+</div><div class="translate-style">
+繁/简：<a id="translateLink" href="javascript:translatePage();">繁体
+</a>
+</div>
+<script type="text/javascript" src="/js/tw_cn.js"></script>
+<script type="text/javascript">
+var defaultEncoding = 2; //网站编写字体是否繁体，1-繁体，2-简体
+var translateDelay = 0; //延迟时间,若不在前, 要设定延迟翻译时间, 如100表示100ms,默认为0
+var cookieDomain = "https://jygzyc.github.io"; //Cookie地址, 一定要设定, 通常为你的网址
+var msgToTraditionalChinese = "繁体"; //此处可以更改为你想要显示的文字
+var msgToSimplifiedChinese = "简体"; //同上，但两处均不建议更改
+var translateButtonId = "translateLink"; //默认互换id
+translateInitilization();
+</script>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css">
+  <script src="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@0/dist/contrib/copy-tex.min.css">
+
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : true,
+      appId      : 'oek4POHiBIvfaohqeUVEXe6R-MdYXbMMI',
+      appKey     : 'lLA7VFlH2lJNoICpWJsKyhpE',
+      placeholder: "欢迎评论呀！",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+
+
+
+
+<div class="moon-menu">
+  <div class="moon-menu-items">
+    
+    <div class="moon-menu-item" onclick="back2bottom()">
+      <i class="fa fa-chevron-down"></i>
+    </div>
+    
+    <div class="moon-menu-item" onclick="back2top()">
+      <i class="fa fa-chevron-up"></i>
+    </div>
+    
+  </div>
+  <div class="moon-menu-button" onclick="moonMenuClick()">
+    <svg class="moon-menu-svg">
+      <circle class="moon-menu-cricle" cx="50%" cy="50%" r="44%"></circle>
+      <circle class="moon-menu-border" cx="50%" cy="50%" r="48%"></circle>
+      <g class="moon-menu-points">
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy="-.8rem"></circle>
+        <circle class="moon-menu-point" r=".2rem"></circle>
+        <circle class="moon-menu-point" r=".2rem" cx="0" cy=".8rem"></circle>
+      </g>
+    </svg>
+    <div class="moon-menu-icon">
+    </div>
+    <div class="moon-menu-text">
+    </div>
+  </div>
+</div>
+
+<script>
+
+  const moonMenuListener = function () {
+
+    //Get scroll percent
+    let offsetHeight = document.documentElement.offsetHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    let percent = Math.round(scrollTop / (scrollHeight - offsetHeight) * 100);
+    if (percent > 100) percent = 100;
+
+    let menuText = document.querySelector('.moon-menu-text');
+    let menuPoints = document.querySelector('.moon-menu-points');
+    if (!percent) {
+      percent = 0;
+      menuText.style.display = 'none';
+      menuPoints.style.display = 'block';
+    } else {
+      menuText.style.display = 'block';
+      menuPoints.style.display = 'none';
+      menuText.innerHTML = percent + '%';
+    }
+
+    //Update strokeDasharray
+    let length = 196;
+    document.querySelector('.moon-menu-border').style.strokeDasharray = percent * length / 100 + ' ' + length;
+
+  }
+
+  window.addEventListener('load', () => {
+    moonMenuListener();
+  });
+  window.addEventListener('scroll', moonMenuListener);
+
+  const moonMenuClick = function () {
+    let items = document.querySelector('.moon-menu-items')
+    items.classList.toggle('active');
+    let points = document.querySelectorAll('.moon-menu-point');
+    let childItems = document.querySelectorAll('.moon-menu-item');
+    if (items.classList.contains('active')) {
+      points[0].setAttribute("cx", "-.8rem");
+      points[0].setAttribute("cy", "0");
+      points[2].setAttribute("cx", ".8rem");
+      points[2].setAttribute("cy", "0");
+      for (let i = 0; i < childItems.length; i++) {
+        childItems[i].style.top = -3 - 3 * i + 'rem';
+        childItems[i].style.opacity = .9;
+      }
+    } else {
+      points[0].setAttribute("cx", "0");
+      points[0].setAttribute("cy", "-.8rem");
+      points[2].setAttribute("cx", "0");
+      points[2].setAttribute("cy", ".8rem");
+      for (let i = 0; i < childItems.length; i++) {
+        childItems[i].style.top = '1rem';
+        childItems[i].style.opacity = 0;
+      }
+    }
+  };
+
+  const back2top = () => {
+    window.scroll({ top: 0, behavior: 'smooth' });
+  }
+
+  const back2bottom = () => {
+    let offsetHeight = document.documentElement.offsetHeight;
+    let scrollHeight = document.documentElement.scrollHeight;
+    window.scroll({ top: (scrollHeight - offsetHeight), behavior: 'smooth' });
+  }
+
+</script>
+</body>
+</html>
