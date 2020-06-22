@@ -1,53 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++ 类解析（1）</title>
-    <url>/program/c/C-Class-1/</url>
-    <content><![CDATA[<blockquote>
-<p>写一下C++ 类的解析，若有不足请联系我</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>我们以咖啡店的产品为例，来讲解类的例子。</p>
-</blockquote>
-<h1 id="类的定义"><a class="markdownIt-Anchor" href="#类的定义"></a> 类的定义</h1>
-<p>菜鸟教程上对类的定义如下：</p>
-<blockquote>
-<p>类是 C++ 的核心特性，通常被称为用户定义的类型。类用于指定对象的形式，它包含了数据表示法和用于处理数据的方法。类中的数据和方法称为类的成员。函数在一个类中被称为类的成员。</p>
-</blockquote>
-<p>可以使用如下代码定义一个类：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//Product.h</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Product</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">string</span> code;</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">string</span> description;</span><br><span class="line">	<span class="keyword">double</span> price;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Product(<span class="built_in">std</span>::<span class="built_in">string</span> code, <span class="built_in">std</span>::<span class="built_in">string</span> description, <span class="keyword">double</span> price);</span><br><span class="line">	~Product();</span><br><span class="line">	<span class="function"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">getCode</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>类定义是以关键字 class 开头，后跟类的名称。类的主体是包含在一对花括号中。类定义后必须跟着一个分号或一个声明列表。</p>
-<p>为什么需要类，我们可以举一个例子。</p>
-<p>现在有一个冰箱，众所周知，冰箱有自己的长宽高，即类的属性；同时，一个冰箱必须要能够被打开和关闭，这样的动作能够使用函数进行定义，即类的成员函数；当定义完一个冰箱的属性和成员函数时，我们就创造了一个冰箱的对象。通过创建不同的冰箱对象，我们能够得到所有的冰箱，</p>
-<h2 id="类的成员函数"><a class="markdownIt-Anchor" href="#类的成员函数"></a> 类的成员函数</h2>
-<p>类的成员函数是指那些把定义和原型写在类定义内部的函数，就像类定义中的其他变量一样。类成员函数是类的一个成员，它可以操作类的任意对象，可以访问对象中的所有成员。</p>
-<p>在上面的代码中，public关键字下定义的函数即是类的成员函数：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">Product(<span class="built_in">std</span>::<span class="built_in">string</span> code, <span class="built_in">std</span>::<span class="built_in">string</span> description, <span class="keyword">double</span> price);</span><br><span class="line">~Product();</span><br><span class="line"><span class="function"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">getCode</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="built_in">std</span>::<span class="built_in">string</span> <span class="title">getDescription</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getPrice</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
-<h2 id="关键字"><a class="markdownIt-Anchor" href="#关键字"></a> 关键字</h2>
-<p>不同的关键字指定了类成员的访问属性，以上述代码为例，我定义了一个商品的标识码，描述及其价格，这是咖啡店中所有商品都具有的属性。但是，我们只需要他人能够获取到这些属性，而不能修改这些属性，那么就可以使用priavte关键字指定我们声明的这些属性。关于关键字的解析如下。</p>
-<p>官方解释如下：</p>
-<blockquote>
-<p>数据封装是面向对象编程的一个重要特点，它防止函数直接访问类类型的内部成员。类成员的访问限制是通过在类主体内部对各个区域标记 public、private、protected 来指定的。关键字 public、private、protected 称为访问修饰符。</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> &#123;</span></span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>: </span><br><span class="line">  <span class="comment">// 公有成员</span></span><br><span class="line"> </span><br><span class="line">   <span class="keyword">protected</span>:</span><br><span class="line">  <span class="comment">// 受保护成员</span></span><br><span class="line"> </span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">  <span class="comment">// 私有成员</span></span><br><span class="line"> </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="public公有public成员"><a class="markdownIt-Anchor" href="#public公有public成员"></a> public——公有（public）成员</h3>
-<p>公有成员在程序中类的外部是可访问的，可以直接访问公有变量并赋值，而不需要使用函数赋值。</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Line</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">      <span class="keyword">double</span> length;</span><br><span class="line">      <span class="function"><span class="keyword">void</span> <span class="title">setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span>;</span><br><span class="line">      <span class="function"><span class="keyword">double</span> <span class="title">getLength</span><span class="params">( <span class="keyword">void</span> )</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 成员函数定义</span></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">Line::getLength</span><span class="params">(<span class="keyword">void</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> length ;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Line::setLength</span><span class="params">( <span class="keyword">double</span> len )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    length = len;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 程序的主函数</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">( )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   Line <span class="built_in">line</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 设置长度</span></span><br><span class="line">   <span class="built_in">line</span>.setLength(<span class="number">6.0</span>); </span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Length of line : "</span> &lt;&lt; <span class="built_in">line</span>.getLength() &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 不使用成员函数设置长度</span></span><br><span class="line">   <span class="built_in">line</span>.length = <span class="number">10.0</span>; <span class="comment">// 因为length是共有的，所以这是可以的</span></span><br><span class="line">   <span class="built_in">cout</span> &lt;&lt; <span class="string">"Length of line : "</span> &lt;&lt; <span class="built_in">line</span>.length &lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Length of line : 6</span></span><br><span class="line"><span class="comment">// Length of line : 10</span></span><br></pre></td></tr></table></figure>
-<h3 id="private私有private成员"><a class="markdownIt-Anchor" href="#private私有private成员"></a> private——私有（private）成员</h3>
-<p>私有成员变量或函数在类的外部是不可访问的，甚至是不可查看的。类可以访问到私有成员。</p>
-<p>默认情况下，类的所有成员都是私有的。例如在下面的类中，width 是一个私有成员，这意味着，如果您没有使用任何访问修饰符，类的成员将被假定为私有成员：</p>
-]]></content>
-      <categories>
-        <category>program</category>
-        <category>c</category>
-      </categories>
-      <tags>
-        <tag>program</tag>
-        <tag>c</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>UEFI原理与实践笔记-Hello UEFI</title>
     <url>/UEFI/HelloUEFI/</url>
     <content><![CDATA[<blockquote>
@@ -1497,8 +1450,8 @@ Y_R &amp;= (\lambda(X_P - X_R)-Y_P) \mod P\\
       </categories>
       <tags>
         <tag>writeup</tag>
-        <tag>ctf</tag>
         <tag>reserve</tag>
+        <tag>ctf</tag>
       </tags>
   </entry>
   <entry>

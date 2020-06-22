@@ -17,33 +17,6 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>C++ 类解析（1）</title>
-    <link href="https://jygzyc.github.io/program/c/C-Class-1/"/>
-    <id>https://jygzyc.github.io/program/c/C-Class-1/</id>
-    <published>2020-06-04T05:20:21.000Z</published>
-    <updated>2020-06-22T17:58:54.412Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;写一下C++ 类的解析，若有不足请联系我&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-    
-      <category term="program" scheme="https://jygzyc.github.io/categories/program/"/>
-    
-      <category term="c" scheme="https://jygzyc.github.io/categories/program/c/"/>
-    
-    
-      <category term="program" scheme="https://jygzyc.github.io/tags/program/"/>
-    
-      <category term="c" scheme="https://jygzyc.github.io/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
     <title>UEFI原理与实践笔记-Hello UEFI</title>
     <link href="https://jygzyc.github.io/UEFI/HelloUEFI/"/>
     <id>https://jygzyc.github.io/UEFI/HelloUEFI/</id>
@@ -400,9 +373,9 @@
     
       <category term="writeup" scheme="https://jygzyc.github.io/tags/writeup/"/>
     
-      <category term="ctf" scheme="https://jygzyc.github.io/tags/ctf/"/>
-    
       <category term="reserve" scheme="https://jygzyc.github.io/tags/reserve/"/>
+    
+      <category term="ctf" scheme="https://jygzyc.github.io/tags/ctf/"/>
     
   </entry>
   

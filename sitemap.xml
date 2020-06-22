@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jygzyc.github.io/photos/index.html</loc>
+    
+    <lastmod>2020-06-22T17:58:54.464Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jygzyc.github.io/links/index.html</loc>
     
     <lastmod>2020-06-22T17:58:54.464Z</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>https://jygzyc.github.io/links/linklist.json</loc>
-    
-    <lastmod>2020-06-22T17:58:54.464Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/photos/index.html</loc>
     
     <lastmod>2020-06-22T17:58:54.464Z</lastmod>
     
@@ -150,13 +150,6 @@
   
   <url>
     <loc>https://jygzyc.github.io/UEFI/HelloUEFI/</loc>
-    
-    <lastmod>2020-06-22T17:58:54.412Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/program/c/C-Class-1/</loc>
     
     <lastmod>2020-06-22T17:58:54.412Z</lastmod>
     
