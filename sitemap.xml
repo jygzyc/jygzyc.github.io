@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2020-08-25T14:28:39.260Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jygzyc.github.io/about/index.html</loc>
     
     <lastmod>2020-07-10T13:50:10.446Z</lastmod>
@@ -124,13 +131,6 @@
     <loc>https://jygzyc.github.io/Windows-Exploit/Windows-Exploit-Development-Part-1-The-Basics-%E8%BD%AC%E8%BD%BD/</loc>
     
     <lastmod>2020-06-22T17:58:54.419Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
-    
-    <lastmod>2020-06-22T17:58:54.418Z</lastmod>
     
   </url>
   

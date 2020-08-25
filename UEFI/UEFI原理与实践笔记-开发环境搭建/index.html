@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 4.2.1">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -29,14 +29,14 @@
 <meta property="og:site_name" content="Ecool">
 <meta property="og:description" content="UEFI原理与实践笔记（一）-开发环境搭建 记录一下在Windows环境下搭建UEFI开发环境的过程">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://dev.tencent.com/u/jygzyc/p/blog-back-up/git/raw/master/_posts/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vs2019.png">
-<meta property="og:image" content="https://dev.tencent.com/u/jygzyc/p/blog-back-up/git/raw/master/_posts/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ovmf.png">
+<meta property="og:image" content="https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vs2019.png">
+<meta property="og:image" content="https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ovmf.png">
 <meta property="article:published_time" content="2020-02-01T06:16:43.000Z">
-<meta property="article:modified_time" content="2020-06-22T17:58:54.418Z">
+<meta property="article:modified_time" content="2020-08-25T14:28:39.260Z">
 <meta property="article:author" content="jygzyc">
 <meta property="article:tag" content="UEFI">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://dev.tencent.com/u/jygzyc/p/blog-back-up/git/raw/master/_posts/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vs2019.png">
+<meta name="twitter:image" content="https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vs2019.png">
 
 <link rel="canonical" href="https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
 
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 01:58:54" itemprop="dateModified" datetime="2020-06-23T01:58:54+08:00">2020-06-23</time>
+                <time title="Modified: 2020-08-25 22:28:39" itemprop="dateModified" datetime="2020-08-25T22:28:39+08:00">2020-08-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,7 +301,7 @@
 <p>安装 Visual Studio 2019 作为主要的开发工具<br />
 下载地址：<a href="https://visualstudio.microsoft.com/zh-hans/free-developer-offers/" target="_blank" rel="noopener">https://visualstudio.microsoft.com/zh-hans/free-developer-offers/</a><br />
 我们勾选如下的选项即可：<br />
-<img data-src="https://dev.tencent.com/u/jygzyc/p/blog-back-up/git/raw/master/_posts/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/vs2019.png" alt="安装" /><br />
+<img data-src="vs2019.png" alt="安装" /><br />
 选用vs2019的原因是当前EDK2推荐的版本就是vs2019，比较稳定。<br />
 装好之后，我们可以将<code>Developer Command Prompt for VS 2019</code>这个快捷方式单独提出来，之后会频繁用到。</p>
 <h3 id="edk2"><a class="markdownIt-Anchor" href="#edk2"></a> EDK2</h3>
@@ -361,7 +361,7 @@
 <p>其中，<code>OVMF.fd</code>就是编译好的文件，<code>run.bat</code>的内容如下：</p>
 <figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">qemu-system-x86_64 -drive file=OVMF.fd,<span class="keyword">if</span>=pflash,<span class="built_in">format</span>=raw,unit=<span class="number">0</span>,readonly=on -drive file=fat:rw:.\hda-contents\,media=disk,<span class="keyword">if</span>=virtio,<span class="built_in">format</span>=raw -m <span class="number">512</span> -machine q35,smm=on -nodefaults -vga std -global driver=cfi.pflash01,property=secure,value=on -global ICH9-LPC.disable_s3=<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p>此时我们执行<code>run.bat</code>，可以看到如下的界面：</p>
-<p><img data-src="https://dev.tencent.com/u/jygzyc/p/blog-back-up/git/raw/master/_posts/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/ovmf.png" alt="UEFI模拟器启动界面" /></p>
+<p><img data-src="ovmf.png" alt="UEFI模拟器启动界面" /></p>
 <p>在<code>Shell &gt;</code>后输入<code>fs0:</code>即可进入到存放文件的位置，因为目前还没有任何工程，所以没有<code>.efi</code>可执行文件。</p>
 <h1 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h1>
 <p>UEFI原理与编程/戴正华著 2015.1</p>
