@@ -1,107 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>C++ String函数用法</title>
-    <url>/program/c/C-String%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</url>
-    <content><![CDATA[<blockquote>
-<p>总结一下C++中String的方法</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="运算符重载"><a class="markdownIt-Anchor" href="#运算符重载"></a> 运算符重载</h1>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">符号</th>
-<th style="text-align:center">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">+, +=</td>
-<td style="text-align:center">连接字符串</td>
-</tr>
-<tr>
-<td style="text-align:center">=</td>
-<td style="text-align:center">字符串赋值</td>
-</tr>
-<tr>
-<td style="text-align:center">&gt;, &gt;=, &lt;, &lt;=</td>
-<td style="text-align:center">字符串比较</td>
-</tr>
-<tr>
-<td style="text-align:center">==, !=</td>
-<td style="text-align:center">比较字符串</td>
-</tr>
-<tr>
-<td style="text-align:center">&lt;&lt;, &gt;&gt;</td>
-<td style="text-align:center">输入，输出字符串</td>
-</tr>
-</tbody>
-</table>
-<h1 id="常用函数"><a class="markdownIt-Anchor" href="#常用函数"></a> 常用函数</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; str.<span class="built_in">size</span>() &lt;&lt; <span class="built_in">endl</span>;     <span class="comment">//返回字符串长度</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.length() &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回字符串长度</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.empty() &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//检查 str 是否为空，为空返回 1，否则返回 0</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">123456</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
-<h1 id="查找"><a class="markdownIt-Anchor" href="#查找"></a> 查找</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.<span class="built_in">find</span>(<span class="string">"test"</span>) &lt;&lt; <span class="built_in">endl</span> ;                  <span class="comment">//返回字符串 test 在 str 的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.<span class="built_in">find</span>(<span class="string">"test"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;                <span class="comment">//在 str[2]~str[n-1] 范围内查找并返回字符串 test 在 str 的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.rfind(<span class="string">"test"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;               <span class="comment">//在 str[0]~str[2] 范围内查找并返回字符串 test 在 str 的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//返回 strTest 中任何一个字符首次在 str 中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//返回 strTest 中任何一个字符首次在 str[2]~str[n-1] 范围中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_not_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回除 strTest 以外的任何一个字符在 str 中首次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_not_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//返回除 strTest 以外的任何一个字符在 str[2]~str[n-1] 范围中首次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//返回 strTest 中任何一个字符最后一次在 str 中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;     <span class="comment">//返回 strTest 中任何一个字符最后一次在 str[0]~str[2] 范围中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_not_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//返回除 strTest 以外的任何一个字符在 str 中最后一次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_not_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//返回除 strTest 以外的任何一个字符在 str[0]~str[2] 范围中最后一次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">string</span>::npos;                               <span class="comment">//以上函数如果没有找到，均返回string::npos</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">0123</span>test89strTest //测试数据，以下依次为结果</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">4294967295</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">16</span></span><br><span class="line"><span class="number">4294967295</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">4294967295</span></span><br></pre></td></tr></table></figure>
-<h1 id="子串"><a class="markdownIt-Anchor" href="#子串"></a> 子串</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; str.substr(<span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;      <span class="comment">//返回 [3] 及以后的子串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.substr(<span class="number">2</span>, <span class="number">4</span>) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回 str[2]~str[2+(4-1)] 子串(即从[2]开始4个字符组成的字符串)</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">myStringTest //测试数据，以下依次为结果,下同</span><br><span class="line">tringTest</span><br><span class="line">Stri</span><br></pre></td></tr></table></figure>
-<h1 id="替换"><a class="markdownIt-Anchor" href="#替换"></a> 替换</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; str.replace(<span class="number">2</span>, <span class="number">4</span>, <span class="string">"test"</span>) &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//返回把 [2]~[2+(4-1)] 的内容替换为 "test" 后的新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.replace(<span class="number">2</span>, <span class="number">4</span>, <span class="string">"qwer"</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回把 [2]~[2+(4-1)] 的内容替换为 "qwer" 的前3个字符后的新字符串</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">yyyyyyyyyyyyyy</span><br><span class="line">yytestyyyyyyyy</span><br><span class="line">yyqweyyyyyyyy</span><br></pre></td></tr></table></figure>
-<h1 id="插入"><a class="markdownIt-Anchor" href="#插入"></a> 插入</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt;  str.insert(<span class="number">2</span>, <span class="string">"test"</span>) &lt;&lt; <span class="built_in">endl</span>;            <span class="comment">//从 [2] 位置开始添加字符串 "test"，并返回形成的新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;  str.insert(<span class="number">2</span>, <span class="string">"string"</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//从 [2] 位置开始添加字符串 "string" 的前 3 个字符，并返回形成的新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;  str.insert(<span class="number">2</span>, <span class="string">"123456"</span>, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//从 [2] 位置开始添加字符串 "123456" 的前 [2]~[2+(3-1)] 个字符，并返回形成的新字符串</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">yyyyyyyyy</span><br><span class="line">yytestyyyyyyy</span><br><span class="line">yystrtestyyyyyyy</span><br><span class="line">yy234strtestyyyyyyy</span><br></pre></td></tr></table></figure>
-<h1 id="追加"><a class="markdownIt-Anchor" href="#追加"></a> 追加</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">str.push_back(<span class="string">'1'</span>);               <span class="comment">//在 str 末尾添加字符'1'</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.append(<span class="string">"abc"</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//在 str 末尾添加字符串"abc"</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">asdf</span><br><span class="line">asdf1</span><br><span class="line">asdf1abc</span><br></pre></td></tr></table></figure>
-<h1 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str1 = str;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.erase(<span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//删除 [3] 及以后的字符，并返回新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str1.erase(<span class="number">3</span>, <span class="number">5</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//删除从 [3] 开始的 5 个字符，并返回新字符串</span></span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1234567890</span></span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="number">12390</span></span><br></pre></td></tr></table></figure>
-<h1 id="交换"><a class="markdownIt-Anchor" href="#交换"></a> 交换</h1>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str1, str2;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str1;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str2;</span><br><span class="line">str1.swap(str2);<span class="comment">//把 str1 与 str2 交换</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str1 &lt;&lt; <span class="built_in">endl</span> &lt;&lt; str2 &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">123456</span></span><br><span class="line">qwerty</span><br><span class="line"></span><br><span class="line">qwerty</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
-<h1 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h1>
-<p><a href="https://www.renfei.org/blog/introduction-to-cpp-string.html" target="_blank" rel="noopener">C++ string 字符串函数详解</a><br />
-<a href="http://www.cplusplus.com/reference/string/string/" target="_blank" rel="noopener">string - C++ Reference</a></p>
-]]></content>
-      <categories>
-        <category>program</category>
-        <category>c</category>
-      </categories>
-      <tags>
-        <tag>program</tag>
-        <tag>c</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ISC训练赛_2016_phrackCTF_Classical CrackMe</title>
-    <url>/writeup/ISC%E8%AE%AD%E7%BB%83%E8%B5%9B_2016_phrackCTF_Classical%20CrackMe/</url>
-    <content><![CDATA[<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
-<p>1.用IDA打开文件，浏览一下，看到base64加密过的字符串“UENURntFYTV5X0RvX05ldF9DcjRjazNyfQ==”，解码即是flag：PCTF{Ea5y_Do_Net_Cr4ck3r}</p>
-<a id="more"></a>
-<img data-src="success.jpg" width=40% />
-<p><a href="https://github.com/jygzyc/blog-back-up/raw/master/downloads/CrackMe.rar" target="_blank" rel="noopener">download</a></p>
-]]></content>
-      <categories>
-        <category>writeup</category>
-      </categories>
-      <tags>
-        <tag>writeup</tag>
-        <tag>ctf</tag>
-        <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>UEFI原理与实践笔记-Hello UEFI</title>
     <url>/UEFI/HelloUEFI/</url>
     <content><![CDATA[<blockquote>
@@ -370,6 +269,83 @@
       </tags>
   </entry>
   <entry>
+    <title>Android Native 入门（1）</title>
+    <url>/Android/Native/Android-Native-and-security-introduction-part-1/</url>
+    <content><![CDATA[<p>原生ELF程序的编译</p>
+<a id="more"></a>
+<h1 id="基础环境"><a class="markdownIt-Anchor" href="#基础环境"></a> 基础环境</h1>
+<ul>
+<li>Android Studio，安装NDK，CMake</li>
+<li>拥有手机一个，最好是比较新的系统版本</li>
+<li>IDA等安全工具若干</li>
+</ul>
+<h1 id="android使用ndk编译原生二进制文件并运行"><a class="markdownIt-Anchor" href="#android使用ndk编译原生二进制文件并运行"></a> Android使用NDK编译原生二进制文件并运行</h1>
+<h2 id="编写文件"><a class="markdownIt-Anchor" href="#编写文件"></a> 编写文件</h2>
+<p>先将NDK的路径添加到环境变量中，Windows就不赘述了，这里说一下Linux环境<br />
+使用<code>vim ~/.bashrc</code>命令打开配置文件后，将<code>export PATH=/home/username/Android/Sdk/platform-tools/:$PATH</code>添加到文件尾部即可<br />
+新建一个项目路径，这里命名为jnitest，在其下新建文件夹<code>jni</code>，注意，这里的jni是不可以替换成其他名字的，否则NDK无法识别到<br />
+jni包含3个文件，hello.c，<a href="http://Android.mk" target="_blank" rel="noopener">Android.mk</a>，<a href="http://Application.mk" target="_blank" rel="noopener">Application.mk</a></p>
+<p>hello.c 代码如下</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"Hello World!\n"</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码很简单，就是输出一句话</p>
+<p>Android.mk文件</p>
+<figure class="highlight mk"><table><tr><td class="code"><pre><span class="line">LOCAL_PATH := <span class="variable">$(<span class="built_in">call</span> my-<span class="built_in">dir</span>)</span></span><br><span class="line"><span class="keyword">include</span> <span class="variable">$(CLEAR_VARS)</span></span><br><span class="line">LOCAL_MODULE := hello</span><br><span class="line">LOCAL_SRC_FILES := hello.c</span><br><span class="line"><span class="keyword">include</span> <span class="variable">$(BUILD_EXECUTABLE)</span></span><br></pre></td></tr></table></figure>
+<p>好，我们来解释一下这几行代码：</p>
+<ul>
+<li>
+<p><code>LOCAL_PATH := $(call my-dir)</code>: <a href="http://xn--Android-4t3kgm.mk" target="_blank" rel="noopener">一个Android.mk</a> file首先必须定义好LOCAL_PATH变量。它用于在开发树中查找源文件。在这个例子中，宏函数my-dir， 由编译系统提供，用于返回当前路径（<a href="http://xn--Android-u71l25av6c.mk" target="_blank" rel="noopener">即包含Android.mk</a> file文件的目录）。</p>
+</li>
+<li>
+<p><code>include $( CLEAR_VARS)</code>: CLEAR_VARS由编译系统提供，指定让GNU MAKEFILE为你清除许多LOCAL_XXX变量（例如 LOCAL_MODULE, LOCAL_SRC_FILES, LOCAL_STATIC_LIBRARIES, 等等…),除LOCAL_PATH 。这是必要的，因为所有的编译控制文件都在同一个GNU MAKE执行环境中，所有的变量都是全局的。</p>
+</li>
+<li>
+<p><code>LOCAL_MODULE := hello</code>: LOCAL_MODULE变量必须定义，定义模块名。</p>
+</li>
+<li>
+<p><code>LOCAL_SRC_FILES := hell.c</code>: LOCAL_SRC_FILES变量必须包含将要编译打包进模块中的C或C++源代码文件。注意，你不用在这里列出头文件和包含文件，因为编译系统将会自动为你找出依赖型的文件；仅仅列出直接传递给编译器的源代码文件就好</p>
+</li>
+<li>
+<p><code>include $(BUILD_EXECUTABLE)</code>: 编译系统提供的变量，告诉编译器编译成二进制文件。</p>
+</li>
+</ul>
+<p>Application.mk文件</p>
+<figure class="highlight mk"><table><tr><td class="code"><pre><span class="line">APP_ABI := all</span><br></pre></td></tr></table></figure>
+<p>该指令能够指定生成的文件使用哪一个硬件结构</p>
+<h2 id="编译执行"><a class="markdownIt-Anchor" href="#编译执行"></a> 编译执行</h2>
+<p>shell切换到jnitest目录下，执行ndk-build编译，编译成功后，jnitest目录下多了一个libs目录，这个就是我们可执行二进制文件的目录。<br />
+将对应硬件结构的文件使用adb push到手机中，赋予执行权限即可执行</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">adb push hello /data/<span class="built_in">local</span>/tmp/</span><br><span class="line">adb shell </span><br><span class="line"><span class="built_in">cd</span> /data/<span class="built_in">local</span>/tmp</span><br><span class="line">chmod 777 hello</span><br><span class="line">./hello</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考：</h1>
+<p>[<a href="https://www.cnblogs.com/adong7639/p/11377001.html" target="_blank" rel="noopener">https://www.cnblogs.com/adong7639/p/11377001.html</a>](Android 使用NDK编译二进制文件并运行)</p>
+]]></content>
+      <categories>
+        <category>Android</category>
+        <category>Native</category>
+      </categories>
+      <tags>
+        <tag>Android</tag>
+        <tag>Native</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ISC训练赛_2016_phrackCTF_Classical CrackMe</title>
+    <url>/writeup/ISC%E8%AE%AD%E7%BB%83%E8%B5%9B_2016_phrackCTF_Classical%20CrackMe/</url>
+    <content><![CDATA[<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
+<p>1.用IDA打开文件，浏览一下，看到base64加密过的字符串“UENURntFYTV5X0RvX05ldF9DcjRjazNyfQ==”，解码即是flag：PCTF{Ea5y_Do_Net_Cr4ck3r}</p>
+<a id="more"></a>
+<img data-src="success.jpg" width=40% />
+<p><a href="https://github.com/jygzyc/blog-back-up/raw/master/downloads/CrackMe.rar" target="_blank" rel="noopener">download</a></p>
+]]></content>
+      <categories>
+        <category>writeup</category>
+      </categories>
+      <tags>
+        <tag>writeup</tag>
+        <tag>ctf</tag>
+        <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JCTF_2014_小菜一碟</title>
     <url>/writeup/JCTF-2014-%E5%B0%8F%E8%8F%9C%E4%B8%80%E7%A2%9F/</url>
     <content><![CDATA[<ol>
@@ -402,90 +378,240 @@
       </tags>
   </entry>
   <entry>
-    <title>UEFI原理与实践笔记_开发环境搭建</title>
-    <url>/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <title>C++ String函数用法</title>
+    <url>/program/c/C-String%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</url>
     <content><![CDATA[<blockquote>
-<p>UEFI原理与实践笔记（一）-开发环境搭建<br />
-记录一下在Windows环境下搭建UEFI开发环境的过程</p>
+<p>总结一下C++中String的方法</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="配置windows开发环境"><a class="markdownIt-Anchor" href="#配置windows开发环境"></a> 配置Windows开发环境</h1>
-<h2 id="下载安装所需工具"><a class="markdownIt-Anchor" href="#下载安装所需工具"></a> 下载安装所需工具</h2>
-<p>我们首先需要安装EDK2所依赖的开发工具及本身。</p>
-<h3 id="vs2019"><a class="markdownIt-Anchor" href="#vs2019"></a> vs2019</h3>
-<p>安装 Visual Studio 2019 作为主要的开发工具<br />
-下载地址：<a href="https://visualstudio.microsoft.com/zh-hans/free-developer-offers/" target="_blank" rel="noopener">https://visualstudio.microsoft.com/zh-hans/free-developer-offers/</a><br />
-我们勾选如下的选项即可：<br />
-<img data-src="vs2019.png" alt="安装" /><br />
-选用vs2019的原因是当前EDK2推荐的版本就是vs2019，比较稳定。<br />
-装好之后，我们可以将<code>Developer Command Prompt for VS 2019</code>这个快捷方式单独提出来，之后会频繁用到。</p>
-<h3 id="edk2"><a class="markdownIt-Anchor" href="#edk2"></a> EDK2</h3>
-<p>Github地址：<a href="https://github.com/tianocore/edk2" target="_blank" rel="noopener">https://github.com/tianocore/edk2</a><br />
-最好下载最新的release版本，将EDK2目录解压后放在<code>C:</code>目录下。</p>
-<h3 id="python-38"><a class="markdownIt-Anchor" href="#python-38"></a> Python 3.8</h3>
-<p>下载地址：<a href="https://www.python.org/ftp/python/3.8.1/python-3.8.1.exe" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.8.1/python-3.8.1.exe</a><br />
-安装时最好勾选添加到环境变量中，不然之后还得自己配。</p>
-<h3 id="nasm"><a class="markdownIt-Anchor" href="#nasm"></a> NASM</h3>
-<p>下载地址：<a href="https://www.nasm.us/" target="_blank" rel="noopener">https://www.nasm.us/</a><br />
-同样，将NASM安装到<code>C:</code>目录下，并将目录添加到系统环境变量Path中。</p>
-<h3 id="iasl"><a class="markdownIt-Anchor" href="#iasl"></a> iasl</h3>
-<p>下载地址：<a href="https://acpica.org/downloads/binary-tools" target="_blank" rel="noopener">https://acpica.org/downloads/binary-tools</a><br />
-将iasl安装到<code>C:</code>目录下，并将目录添加到系统环境变量Path中。</p>
-<h2 id="配置edk2开发环境"><a class="markdownIt-Anchor" href="#配置edk2开发环境"></a> 配置EDK2开发环境</h2>
-<h3 id="初始化环境"><a class="markdownIt-Anchor" href="#初始化环境"></a> 初始化环境</h3>
-<p>进入EDK2目录，运行<code>edksetup.bat</code>，此步骤用于建立Conf目录下的<code>target.txt</code>，<code>tools_def.txt</code>等文件。</p>
-<h3 id="编辑编译相关文件"><a class="markdownIt-Anchor" href="#编辑编译相关文件"></a> 编辑编译相关文件</h3>
-<p>编辑<code>Conf/target.txt</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">ACTIVE_PLATFORM       &#x3D; MdePkg&#x2F;MdePkg.dsc</span><br><span class="line">...</span><br><span class="line">TARGET                &#x3D; RELEASE</span><br><span class="line">...</span><br><span class="line">TARGET_ARCH           &#x3D; X64</span><br><span class="line">...</span><br><span class="line">TOOL_CHAIN_TAG        &#x3D; VS2019</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="编译uefi基础依赖包"><a class="markdownIt-Anchor" href="#编译uefi基础依赖包"></a> 编译UEFI基础依赖包</h2>
-<p>首先我们需要设置命令行能够包含vs2019的工具集，我们打开之前强调的<code>Developer Command Prompt for VS 2019</code>，从该命令行窗口进入EDK2目录，即<code>cd C:\edk2</code>。</p>
-<p>在每一次编译项目前，我们还要保证EDK2环境变量被设置，即运行<code>edksetup.bat</code>。</p>
-<p>当我们设置完环境后，就可以执行<code>build</code>命令了，这个命令能够分析工程文件，根据你的设置自动执行相应编译和连接命令。在上面我们修改了<code>target.txt</code>文件，这个文件相当于编译配置文件。</p>
-<p>在这里解释一下上面修改内容的含义：</p>
-<ul>
-<li>MdePkg是UEFI环境下的基础库，地位差不多和C语言中的<code>stdio.h</code>类似，编译这个库后自己写的工程模块才能进行依赖运行。</li>
-<li>我们在这里编译的程序架构为<code>X64</code>，所以最后编译版本为<code>Release</code>，若为32位架构则可以选择编译版本为<code>DEBUG</code>，在这里不作讨论。</li>
-<li>工具链选择为vs2019</li>
-</ul>
-<p><code>build</code>命令执行后，若结果为<code>Done</code>，则说明环境配置成功。</p>
-<h2 id="编译cryptopkg"><a class="markdownIt-Anchor" href="#编译cryptopkg"></a> 编译CryptoPkg</h2>
-<h3 id="补全cryptopkg"><a class="markdownIt-Anchor" href="#补全cryptopkg"></a> 补全CryptoPkg</h3>
-<p>在进行下个步骤之前，我们需要先编译CryptoPkg，我们打开<code>edk2/CryptoPkg/Library/OpensslLib/openssl</code>，发现是一个空的文件夹，我们需要下载OpenSSL的对应版本，先将CryptoPkg补全。</p>
-<p>我们去<a href="https://github.com/tianocore/edk2/releases" target="_blank" rel="noopener">EDK2 release</a>找到自己下载的版本，在这里我们能找到对应所需的OpenSSL版本，我的EDK2版本是<code>edk2-stable201911</code>，对应的OpenSSL版本是<code>1.1.1d</code>。到OpenSSL官方下载：<a href="https://github.com/openssl/openssl/releases" target="_blank" rel="noopener">https://github.com/openssl/openssl/releases</a>，解压并放到指定文件夹中。</p>
-<h3 id="编译"><a class="markdownIt-Anchor" href="#编译"></a> 编译</h3>
-<p>同上，编辑<code>target.txt</code>文件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">ACTIVE_PLATFORM       &#x3D; CryptoPkg&#x2F;CryptoPkg.dsc</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<p><code>build</code>命令执行后，若结果为<code>Done</code>，则说明编译成功。</p>
-<h1 id="安装并编译uefi模拟器"><a class="markdownIt-Anchor" href="#安装并编译uefi模拟器"></a> 安装并编译UEFI模拟器</h1>
-<h2 id="安装qemu虚拟机"><a class="markdownIt-Anchor" href="#安装qemu虚拟机"></a> 安装QEMU虚拟机</h2>
-<p>下载地址：<a href="https://www.qemu.org/download/#windows" target="_blank" rel="noopener">https://www.qemu.org/download/#windows</a></p>
-<h2 id="编译ovmf模拟器"><a class="markdownIt-Anchor" href="#编译ovmf模拟器"></a> 编译OVMF模拟器</h2>
-<p>引用一下官方对OVMF的介绍：</p>
-<blockquote>
-<p>OVMF is an EDK II based project to enable UEFI support for Virtual Machines. OVMF contains sample UEFI firmware for QEMU and KVM.</p>
-</blockquote>
-<p>简单来说，就是OVMF能够为虚拟机提供UEFI支持，能够为QEMU虚拟机提供UEFI固件样本。</p>
-<p>在之前编译<code>MdePkg</code>时，我们需要修改<code>target.txt</code>文件，由于每次编译都得修改<code>target.txt</code>中的<code>ACTIVE_PLATFORM</code>选项过于麻烦，我们直接给<code>build</code>命令附加参数：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">build -a X64 -p OvmfPkg/OvmfPkg.dsc</span><br></pre></td></tr></table></figure>
-<p><code>-p</code>选项为通过指定<code>.dsc</code>文件指定要编译的Package，这个选项会取代<code>target.txt</code>中的<code>ACTIVE_PLATFORM</code>选项；<code>-a</code>选项选择目标平台，这个选项会取代<code>target.txt</code>中的<code>TARGET_ARCH</code>选项。</p>
-<h2 id="建立目录"><a class="markdownIt-Anchor" href="#建立目录"></a> 建立目录</h2>
-<p>若编译成功，我们能够在<code>edk2/Build</code>目录下见到我们先前编译的所有文件，<br />
-找到<code>edk2/Build/OvmfX64/RELEASE_VS2019/FV/OVMF.fd</code>文件，这就是我们需要的UEFI样本。</p>
-<p>在任意地方新建一个目录，目录结构如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ovmf  名字可以自己起</span><br><span class="line">|</span><br><span class="line">│   OVMF.fd</span><br><span class="line">│   run.bat</span><br><span class="line">└───hda-contents</span><br><span class="line">│   │   这里将存放之后编译好的.efi文件</span><br><span class="line">|   |   文件夹的名称要和下面的 run.bat 脚本中的文件夹名称保持一致</span><br></pre></td></tr></table></figure>
-<p>其中，<code>OVMF.fd</code>就是编译好的文件，<code>run.bat</code>的内容如下：</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">qemu-system-x86_64 -drive file=OVMF.fd,<span class="keyword">if</span>=pflash,<span class="built_in">format</span>=raw,unit=<span class="number">0</span>,readonly=on -drive file=fat:rw:.\hda-contents\,media=disk,<span class="keyword">if</span>=virtio,<span class="built_in">format</span>=raw -m <span class="number">512</span> -machine q35,smm=on -nodefaults -vga std -global driver=cfi.pflash01,property=secure,value=on -global ICH9-LPC.disable_s3=<span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>此时我们执行<code>run.bat</code>，可以看到如下的界面：</p>
-<p><img data-src="ovmf.png" alt="UEFI模拟器启动界面" /></p>
-<p>在<code>Shell &gt;</code>后输入<code>fs0:</code>即可进入到存放文件的位置，因为目前还没有任何工程，所以没有<code>.efi</code>可执行文件。</p>
+<h1 id="运算符重载"><a class="markdownIt-Anchor" href="#运算符重载"></a> 运算符重载</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">符号</th>
+<th style="text-align:center">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">+, +=</td>
+<td style="text-align:center">连接字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">=</td>
+<td style="text-align:center">字符串赋值</td>
+</tr>
+<tr>
+<td style="text-align:center">&gt;, &gt;=, &lt;, &lt;=</td>
+<td style="text-align:center">字符串比较</td>
+</tr>
+<tr>
+<td style="text-align:center">==, !=</td>
+<td style="text-align:center">比较字符串</td>
+</tr>
+<tr>
+<td style="text-align:center">&lt;&lt;, &gt;&gt;</td>
+<td style="text-align:center">输入，输出字符串</td>
+</tr>
+</tbody>
+</table>
+<h1 id="常用函数"><a class="markdownIt-Anchor" href="#常用函数"></a> 常用函数</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; str.<span class="built_in">size</span>() &lt;&lt; <span class="built_in">endl</span>;     <span class="comment">//返回字符串长度</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.length() &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回字符串长度</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.empty() &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//检查 str 是否为空，为空返回 1，否则返回 0</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">123456</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line"><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<h1 id="查找"><a class="markdownIt-Anchor" href="#查找"></a> 查找</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str;</span><br><span class="line"></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.<span class="built_in">find</span>(<span class="string">"test"</span>) &lt;&lt; <span class="built_in">endl</span> ;                  <span class="comment">//返回字符串 test 在 str 的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.<span class="built_in">find</span>(<span class="string">"test"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;                <span class="comment">//在 str[2]~str[n-1] 范围内查找并返回字符串 test 在 str 的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.rfind(<span class="string">"test"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;               <span class="comment">//在 str[0]~str[2] 范围内查找并返回字符串 test 在 str 的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//返回 strTest 中任何一个字符首次在 str 中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//返回 strTest 中任何一个字符首次在 str[2]~str[n-1] 范围中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_not_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回除 strTest 以外的任何一个字符在 str 中首次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_first_not_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//返回除 strTest 以外的任何一个字符在 str[2]~str[n-1] 范围中首次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//返回 strTest 中任何一个字符最后一次在 str 中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;     <span class="comment">//返回 strTest 中任何一个字符最后一次在 str[0]~str[2] 范围中出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_not_of(<span class="string">"strTest"</span>) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//返回除 strTest 以外的任何一个字符在 str 中最后一次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.find_last_not_of(<span class="string">"strTest"</span>, <span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>; <span class="comment">//返回除 strTest 以外的任何一个字符在 str[0]~str[2] 范围中最后一次出现的位置</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">string</span>::npos;                               <span class="comment">//以上函数如果没有找到，均返回string::npos</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">0123</span>test89strTest //测试数据，以下依次为结果</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">4294967295</span></span><br><span class="line"></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">16</span></span><br><span class="line"><span class="number">4294967295</span></span><br><span class="line"><span class="number">9</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="number">4294967295</span></span><br></pre></td></tr></table></figure>
+<h1 id="子串"><a class="markdownIt-Anchor" href="#子串"></a> 子串</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; str.substr(<span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;      <span class="comment">//返回 [3] 及以后的子串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.substr(<span class="number">2</span>, <span class="number">4</span>) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回 str[2]~str[2+(4-1)] 子串(即从[2]开始4个字符组成的字符串)</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">myStringTest //测试数据，以下依次为结果,下同</span><br><span class="line">tringTest</span><br><span class="line">Stri</span><br></pre></td></tr></table></figure>
+<h1 id="替换"><a class="markdownIt-Anchor" href="#替换"></a> 替换</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt; str.replace(<span class="number">2</span>, <span class="number">4</span>, <span class="string">"test"</span>) &lt;&lt; <span class="built_in">endl</span>;        <span class="comment">//返回把 [2]~[2+(4-1)] 的内容替换为 "test" 后的新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.replace(<span class="number">2</span>, <span class="number">4</span>, <span class="string">"qwer"</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//返回把 [2]~[2+(4-1)] 的内容替换为 "qwer" 的前3个字符后的新字符串</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">yyyyyyyyyyyyyy</span><br><span class="line">yytestyyyyyyyy</span><br><span class="line">yyqweyyyyyyyy</span><br></pre></td></tr></table></figure>
+<h1 id="插入"><a class="markdownIt-Anchor" href="#插入"></a> 插入</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cout</span> &lt;&lt;  str.insert(<span class="number">2</span>, <span class="string">"test"</span>) &lt;&lt; <span class="built_in">endl</span>;            <span class="comment">//从 [2] 位置开始添加字符串 "test"，并返回形成的新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;  str.insert(<span class="number">2</span>, <span class="string">"string"</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;       <span class="comment">//从 [2] 位置开始添加字符串 "string" 的前 3 个字符，并返回形成的新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt;  str.insert(<span class="number">2</span>, <span class="string">"123456"</span>, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;    <span class="comment">//从 [2] 位置开始添加字符串 "123456" 的前 [2]~[2+(3-1)] 个字符，并返回形成的新字符串</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">yyyyyyyyy</span><br><span class="line">yytestyyyyyyy</span><br><span class="line">yystrtestyyyyyyy</span><br><span class="line">yy234strtestyyyyyyy</span><br></pre></td></tr></table></figure>
+<h1 id="追加"><a class="markdownIt-Anchor" href="#追加"></a> 追加</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line">str.push_back(<span class="string">'1'</span>);               <span class="comment">//在 str 末尾添加字符'1'</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.append(<span class="string">"abc"</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//在 str 末尾添加字符串"abc"</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">asdf</span><br><span class="line">asdf1</span><br><span class="line">asdf1abc</span><br></pre></td></tr></table></figure>
+<h1 id="删除"><a class="markdownIt-Anchor" href="#删除"></a> 删除</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str1 = str;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str.erase(<span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//删除 [3] 及以后的字符，并返回新字符串</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str1.erase(<span class="number">3</span>, <span class="number">5</span>) &lt;&lt; <span class="built_in">endl</span>;<span class="comment">//删除从 [3] 开始的 5 个字符，并返回新字符串</span></span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1234567890</span></span><br><span class="line"><span class="number">123</span></span><br><span class="line"><span class="number">12390</span></span><br></pre></td></tr></table></figure>
+<h1 id="交换"><a class="markdownIt-Anchor" href="#交换"></a> 交换</h1>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="built_in">string</span> str1, str2;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str1;</span><br><span class="line"><span class="built_in">cin</span> &gt;&gt; str2;</span><br><span class="line">str1.swap(str2);<span class="comment">//把 str1 与 str2 交换</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; str1 &lt;&lt; <span class="built_in">endl</span> &lt;&lt; str2 &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">123456</span></span><br><span class="line">qwerty</span><br><span class="line"></span><br><span class="line">qwerty</span><br><span class="line"><span class="number">123456</span></span><br></pre></td></tr></table></figure>
 <h1 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h1>
-<p>UEFI原理与编程/戴正华著 2015.1</p>
+<p><a href="https://www.renfei.org/blog/introduction-to-cpp-string.html" target="_blank" rel="noopener">C++ string 字符串函数详解</a><br />
+<a href="http://www.cplusplus.com/reference/string/string/" target="_blank" rel="noopener">string - C++ Reference</a></p>
 ]]></content>
       <categories>
-        <category>UEFI</category>
+        <category>program</category>
+        <category>c</category>
       </categories>
       <tags>
-        <tag>UEFI</tag>
+        <tag>program</tag>
+        <tag>c</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NexT主题插件hexo-next-photos</title>
+    <url>/hexo//hexo-next-photos/</url>
+    <content><![CDATA[<blockquote>
+<p>hexo-next-photos插件中文说明</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="hexo-next-photos"><a class="markdownIt-Anchor" href="#hexo-next-photos"></a> hexo-next-photos</h1>
+<h2 id="升级说明"><a class="markdownIt-Anchor" href="#升级说明"></a> 升级说明</h2>
+<ul>
+<li>现在该插件支持图床链接</li>
+<li>升级此插件请认真阅读本文后进行升级，避免出现不必要的麻烦，若有问题请在下方留言，我会认真查看</li>
+</ul>
+<h2 id="插件效果"><a class="markdownIt-Anchor" href="#插件效果"></a> 插件效果</h2>
+<p><a href="https://jygzyc.github.io/photos/">https://jygzyc.github.io/photos/</a></p>
+<h2 id="如何使用"><a class="markdownIt-Anchor" href="#如何使用"></a> 如何使用</h2>
+<h3 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h3>
+<ul>
+<li>执行 <code>npm install hexo-next-photos --save</code> 命令</li>
+<li>然后需要你去修改NexT主题模板，添加如下内容至文件。</li>
+</ul>
+<h3 id="body-endswig"><a class="markdownIt-Anchor" href="#body-endswig"></a> body-end.swig</h3>
+<ul>
+<li>如果之前安装了此插件，请删除 <code>/source/_data/body-end.swig</code>中如下代码</li>
+<li>若之前并没有安装过此插件，请确保该文件已被创建（无需添加内容）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if page.type &#x3D;&#x3D;&#x3D;&#39;photos&#39; %&#125;</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;js&#x2F;photo.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="stylesstyl"><a class="markdownIt-Anchor" href="#stylesstyl"></a> styles.styl</h3>
+<ul>
+<li>如果之前安装了此插件，请删除 <code>/source/_data/styles.styl</code>中如下代码</li>
+<li>若之前并没有安装过此插件，请确保该文件已被创建（无需添加内容）</li>
+</ul>
+<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">//album style</span></span><br><span class="line"><span class="selector-class">.ImageGrid</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">max-width</span>:<span class="number">1040px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">@media (<span class="attribute">min-width</span>: <span class="number">500px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.ImageGrid</span> &#123;</span><br><span class="line">        <span class="attribute">column-count</span>: <span class="number">2</span>; <span class="comment">// two columns on larger phones</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.card</span> &#123;</span><br><span class="line">        <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">        <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@media (<span class="attribute">min-width</span>: <span class="number">800px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.ImageGrid</span> &#123;</span><br><span class="line">        <span class="attribute">column-count</span>: <span class="number">3</span>; <span class="comment">// two columns on larger phones</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.card</span> &#123;</span><br><span class="line">        <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">        <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ImageInCard</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.TextInCard</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.8</span>);</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">70%</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="_configyml"><a class="markdownIt-Anchor" href="#_configyml"></a> _config.yml</h3>
+<ul>
+<li>在你的博客根目录，找到 _config.yml 文件然后添加如下的配置项，并且配置相应的URL</li>
+<li>若之前安装过此插件，请重置config配置如下：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-next-photos</span></span><br><span class="line"><span class="attr">hexo_next_photos:</span></span><br><span class="line">  <span class="attr">modes         :</span> <span class="string">figureBed</span> <span class="comment"># or repository</span></span><br><span class="line">  <span class="attr">pictureUrl    :</span>           <span class="comment"># if repositry, please put your repos URL here</span></span><br><span class="line">  <span class="attr">pictureDirPath:</span>           <span class="comment"># the dir put your photos or linkList.txt file, default: Your blog path/pictureDir/</span></span><br></pre></td></tr></table></figure>
+<p>repos例子：</p>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">hexo_next_photos:</span></span><br><span class="line">  <span class="attr">modes:</span>          <span class="string">repository</span></span><br><span class="line">  <span class="attr">pictureUrl:</span>     <span class="string">https://dev.tencent.com/u/username/p/repos/git/raw/master/photos/</span> <span class="comment"># photos url</span></span><br><span class="line">  <span class="attr">pictureDirPath:</span> <span class="string">photoDir</span> <span class="comment"># photo dir path is 'Your blog path/photoDir/'</span></span><br></pre></td></tr></table></figure>
+<p>图床例子：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-next-photos</span></span><br><span class="line"><span class="attr">hexo_next_photos:</span></span><br><span class="line">  <span class="attr">modes         :</span> <span class="string">figureBed</span> </span><br><span class="line">  <span class="attr">pictureUrl    :</span> </span><br><span class="line">  <span class="attr">pictureDirPath:</span> <span class="string">testDir</span>   <span class="comment"># your linkList file is 'Your blog path/testDir/linkList.txt'</span></span><br></pre></td></tr></table></figure>
+<h3 id="nextyml"><a class="markdownIt-Anchor" href="#nextyml"></a> next.yml</h3>
+<ul>
+<li>方法一：在你的博客主题目录，找到 _config.yml 文件然后添加如下的配置项</li>
+<li>方法二（推荐）：在<code>/source/_data/</code>目录下新建<code>next.yml</code>，并将主题配置文件的内容全部复制过来，然后再修改下列配置项（之前已经新建过<code>next.yml</code>的直接修改就可以了）</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line"><span class="bullet">-</span>  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line"><span class="string">+</span>  <span class="attr">bodyEnd:</span> <span class="string">source/_data/body-end.swig</span></span><br><span class="line"><span class="bullet">-</span>  <span class="comment">#style: source/_data/styles.styl</span></span><br><span class="line"><span class="string">+</span>  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Third Party Plugins &amp; Services Settings</span></span><br><span class="line"><span class="comment"># See: https://theme-next.org/docs/third-party-services/</span></span><br><span class="line"><span class="comment"># You may need to install dependencies or set CDN URLs in `vendors`</span></span><br><span class="line"><span class="comment"># There are two different CDN providers by default:</span></span><br><span class="line"><span class="comment">#   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China</span></span><br><span class="line"><span class="comment">#   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">fancybox:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">+</span> <span class="attr">fancybox:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">+</span> <span class="attr">lazyload:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="comment"># FancyBox</span></span><br><span class="line">  <span class="comment"># jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span></span><br><span class="line">  <span class="comment"># fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span></span><br><span class="line">  <span class="comment"># fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span></span><br><span class="line">  <span class="attr">jquery:</span></span><br><span class="line">  <span class="attr">fancybox:</span>  <span class="comment"># choose a faster CDN</span></span><br><span class="line">  <span class="attr">fancybox_css:</span> <span class="comment"># choose a faster CDN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Lazyload</span></span><br><span class="line">  <span class="comment"># lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js</span></span><br><span class="line">  <span class="comment"># lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="comment"># choose a faster CDN</span></span><br></pre></td></tr></table></figure>
+<h3 id="新建页面"><a class="markdownIt-Anchor" href="#新建页面"></a> 新建页面</h3>
+<ul>
+<li>新建照片页面 <code>hexo new page photos</code>，新建 <code>/source/photos/index.md</code>, 添加如下代码:</li>
+</ul>
+<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Photos</span><br><span class="line">type: photos</span><br><span class="line">---</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ImageGrid"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加如下代码至主题配置文件（前面提到的<code>next.yml</code>）</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="string">+</span> <span class="attr">photos:</span> <span class="string">/photos/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-camera</span></span><br></pre></td></tr></table></figure>
+<h3 id="linklisttxt文件图床模式使用"><a class="markdownIt-Anchor" href="#linklisttxt文件图床模式使用"></a> linkList.txt文件（图床模式使用）</h3>
+<ul>
+<li>新建linkList.txt文件在config指定的目录下，若没有指定，默认为<code>pictureDir</code>，填入图床中图片的链接，样例如下:</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbueyT.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuZlV.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuVS0.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbukYn.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuFFs.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuPoj.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuCwQ.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;Ybu9eg.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuSOS.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;Ybnzy8.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbnxQf.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbnvSP.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbnXWt.jpg</span><br></pre></td></tr></table></figure>
+<h3 id="放入照片repos模式使用"><a class="markdownIt-Anchor" href="#放入照片repos模式使用"></a> 放入照片（repos模式使用）</h3>
+<ul>
+<li>新建 <code>originPhotos</code> 文件夹，放在博客根目录</li>
+<li>放入照片</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">blog  </span><br><span class="line">└───node_modules&#x2F;</span><br><span class="line">└───scaffolds&#x2F;</span><br><span class="line">│   ...</span><br><span class="line">│   _config.yml</span><br><span class="line">└───oringinPhotos&#x2F;</span><br><span class="line">│   │   Put your photos here, please keep your photos names same as your URL photos names</span><br><span class="line">|   |   ...</span><br><span class="line">|   package.json</span><br><span class="line">|   ...</span><br></pre></td></tr></table></figure>
+<p>这样，我们就可以使用插件了。</p>
+<h2 id="存在的问题"><a class="markdownIt-Anchor" href="#存在的问题"></a> 存在的问题</h2>
+<ul>
+<li>图床模式下，图床的响应速度同图床本身有关，存在速度较慢的情况</li>
+</ul>
+<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
+<p><a href="https://github.com/MikeCoder/hexo-tag-cloud" target="_blank" rel="noopener">hexo-tag-cloud</a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>KnowledgePoints</title>
+    <url>/KnowledgePoints/KnowledgePoints/</url>
+    <content><![CDATA[<blockquote>
+<p>随记知识点</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="android"><a class="markdownIt-Anchor" href="#android"></a> Android</h1>
+<p>more…</p>
+<h1 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h1>
+<h2 id="linux软链接的创建-删除和更新"><a class="markdownIt-Anchor" href="#linux软链接的创建-删除和更新"></a> linux软链接的创建、删除和更新</h2>
+<p>创建软链接</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ln -s  [源文件或目录]  [目标文件或目录]</span><br></pre></td></tr></table></figure>
+<h1 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> Windows</h1>
+<p>more…</p>
+<h1 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h1>
+<p>more…</p>
+]]></content>
+      <categories>
+        <category>KnowledgePoints</category>
+      </categories>
+      <tags>
+        <tag>KnowledgePoints</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>baidu_201711_CrackMe01</title>
+    <url>/writeup/baidu-201711-CrackMe01/</url>
+    <content><![CDATA[<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
+<p>1.跑程序，看到图形框，用IDA开</p>
+<a id="more"></a>
+<p><img data-src="run.jpg" alt="run" /><br />
+<br/></p>
+<p>2.寻找常用的函数，先找message，发现有PostMessageW和MessageBoxW,分别双击进入，ctrl+x查看调用</p>
+<img data-src="MessageBoxW.jpg" width=40% />
+<blockquote>
+<p>MessageBoxW</p>
+</blockquote>
+<img data-src="PostMessageW.jpg" width=30% />
+<blockquote>
+<p>PostMessageW</p>
+</blockquote>
+<p>3.发现调用PostMessageW，查看函数，可见将堆的地址传入了函数;没有找到更多信息后查找window函数引用</p>
+<img data-src="heap.jpg" width=30% />
+<blockquote>
+<p>heap</p>
+</blockquote>
+<img data-src="ShowWindow.jpg" width=40% />
+<blockquote>
+<p>ShowWindow</p>
+</blockquote>
+<p>4.进入函数后，发现字符chText，按F5查看伪码</p>
+<img data-src="fcode.jpg" width=40% />
+<p>5.由伪码可以看见判断，chText和v6逐字节做异或，得出flag，其中(v6 &amp; 0xF00)<mark>1024 &amp;&amp; (v6 &amp; 0xF0)</mark>-80 &amp;&amp; (v6 &amp; 6)==6，我们取v6 &lt; 0xff做一下。chText的值进入IDA可以查看。</p>
+<img data-src="chText.jpg" width=20% />
+<p>6.编写CPP程序</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;<span class="type">string</span>.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    unsigned int data[]=&#123;<span class="number">0x4F0</span>,  <span class="number">0x4DA</span>,  <span class="number">0x4D7</span>,  <span class="number">0x4D1</span>,  <span class="number">0x48C</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4F5</span>,  <span class="number">0x4FE</span>,  <span class="number">0x4E3</span>,  <span class="number">0x4F8</span>,  <span class="number">0x4E7</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4E3</span>,  <span class="number">0x4E9</span>,  <span class="number">0x4F0</span>,  <span class="number">0x4F3</span>,  <span class="number">0x485</span>,  <span class="number">0x480</span>,</span><br><span class="line">                        <span class="number">0x484</span>,  <span class="number">0x4F2</span>,  <span class="number">0x4F4</span>,  <span class="number">0x4F3</span>&#125;;</span><br><span class="line">    for(unsigned int i=<span class="number">0</span>;i&lt;<span class="number">0xff</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		for(unsigned int j=<span class="number">0</span>;j&lt;<span class="number">22</span>;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(<span class="string">"%c"</span>,data[j]^i);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(<span class="string">"<span class="subst">\n</span>%X<span class="subst">\n</span>"</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>7.运行得到flag</p>
+<p><img data-src="flag.jpg" alt="flag" /></p>
+<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe01_97D2BF0DBD2EC13065E7104F24CAAED9.zip" target="_blank" rel="noopener">download</a></p>
+]]></content>
+      <categories>
+        <category>writeup</category>
+      </categories>
+      <tags>
+        <tag>writeup</tag>
+        <tag>ctf</tag>
+        <tag>reverse</tag>
       </tags>
   </entry>
   <entry>
@@ -620,40 +746,83 @@
       </tags>
   </entry>
   <entry>
-    <title>baidu_201711_CrackMe01</title>
-    <url>/writeup/baidu-201711-CrackMe01/</url>
-    <content><![CDATA[<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
-<p>1.跑程序，看到图形框，用IDA开</p>
+    <title>baidu-201711-CrackMe02</title>
+    <url>/writeup/baidu-201711-CrackMe02/</url>
+    <content><![CDATA[<h2 id="environment"><a class="markdownIt-Anchor" href="#environment"></a> environment</h2>
+<blockquote>
+<p>后面会用到python的环境，在这里就先配好，个人用的是 python2.7 的环境，配置如下：</p>
+</blockquote>
 <a id="more"></a>
-<p><img data-src="run.jpg" alt="run" /><br />
-<br/></p>
-<p>2.寻找常用的函数，先找message，发现有PostMessageW和MessageBoxW,分别双击进入，ctrl+x查看调用</p>
-<img data-src="MessageBoxW.jpg" width=40% />
+<ul>
+<li>先到官网上下好<a href="https://www.python.org/downloads/release/python-2715/" target="_blank" rel="noopener">python 2.7</a>的安装包，安装。</li>
+<li>用 <code>pip install pycrypto</code>安装加密模块，如果出现<code>error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27</code>，我们就去<a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266" target="_blank" rel="noopener">安装</a>一下Windows对python的支持。</li>
+<li>上述都做完之后，打开<em>python</em>，输入 <code>from Crypto.Cipher import AES</code>，如果运行没有报错，就是配置成功了。</li>
+</ul>
+<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
 <blockquote>
-<p>MessageBoxW</p>
+<p>做之前可以去看看<a href="https://www.ichunqiu.com/course/56677" target="_blank" rel="noopener">大表哥的整理思路的视频</a>，确实很厉害。<br />
+跑这道题算是我学od这么长时间以来最复杂的一个了……跑到吐血</p>
 </blockquote>
-<img data-src="PostMessageW.jpg" width=30% />
+<h3 id="找切入点"><a class="markdownIt-Anchor" href="#找切入点"></a> 找切入点</h3>
+<ul>
+<li>打开这道题，发现是一个checkSN，我们打开IDA查看导入地址表和函数引用，这里常用的有两个，分别是 <code>GetWindowTextA</code>和<code>GetDlgItemTextA</code>，我们初步查看后发现<code>GetDlgItemTextA</code>所在的地方是函数的主体，而且整体只有这一个函数，我们用od在<code>GetDlgItemTextA</code>下bp，f9运行。</li>
+</ul>
+<h3 id="梳理函数逻辑"><a class="markdownIt-Anchor" href="#梳理函数逻辑"></a> 梳理函数逻辑</h3>
+<ul>
+<li>随便输入几个字符CheckSN，在这里我输入的是“123456”。</li>
+<li>一直往下跑，直到 <code>GetDlgItemTextA</code> 函数出现。</li>
+</ul>
+<img data-src="main1.jpg" width=40%>
 <blockquote>
-<p>PostMessageW</p>
+<p>函数往上是在初始化堆栈空间，到了下面的<code>call</code>，能在内存看见输入的’123456‘以16进制放在内存中。<br />
+具体来说应该是’12  34  56‘。</p>
 </blockquote>
-<p>3.发现调用PostMessageW，查看函数，可见将堆的地址传入了函数;没有找到更多信息后查找window函数引用</p>
-<img data-src="heap.jpg" width=30% />
+<ul>
+<li>继续跟踪，我们在00402653处进入AES解密函数。</li>
+</ul>
+<img data-src="main2.jpg" width=40%>
+<img data-src="main3.jpg" width=40%>
+<img data-src="main4.jpg" width=40%>
 <blockquote>
-<p>heap</p>
+<p>先进行AES分组解密，密钥为B1nGzL[4st-TeAm]，IV向量16进制为000102030405060708090A0B0C0D0E0F，使用CBC模式。如果输入转成的16进制长度不是16的倍数，则分组觖密后剩下的会进行ECB模式的解密，密钥不变。 回主流程。</p>
 </blockquote>
-<img data-src="ShowWindow.jpg" width=40% />
+<img data-src="main5.jpg" width=40%>
+<ul>
+<li>回到主流程后，得到结果进行base64解码，地址为00401990；之后进入迷宫选择，这里我们看IDA的解析会更清楚一点。</li>
+</ul>
+<img data-src="jump.jpg" width=40%>
 <blockquote>
-<p>ShowWindow</p>
+<p>swich选择。其原值必须为&quot;82QS&quot;中的一个，不然就是进入default，这是一条死亡之路。 switch中的call循环做完之后，在0040273A 检查0018F1E4 是否为1，为1就game over。整理一下内存查看迷宫如下：</p>
 </blockquote>
-<p>4.进入函数后，发现字符chText，按F5查看伪码</p>
-<img data-src="fcode.jpg" width=40% />
-<p>5.由伪码可以看见判断，chText和v6逐字节做异或，得出flag，其中(v6 &amp; 0xF00)<mark>1024 &amp;&amp; (v6 &amp; 0xF0)</mark>-80 &amp;&amp; (v6 &amp; 6)==6，我们取v6 &lt; 0xff做一下。chText的值进入IDA可以查看。</p>
-<img data-src="chText.jpg" width=20% />
-<p>6.编写CPP程序</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;<span class="type">string</span>.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    unsigned int data[]=&#123;<span class="number">0x4F0</span>,  <span class="number">0x4DA</span>,  <span class="number">0x4D7</span>,  <span class="number">0x4D1</span>,  <span class="number">0x48C</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4F5</span>,  <span class="number">0x4FE</span>,  <span class="number">0x4E3</span>,  <span class="number">0x4F8</span>,  <span class="number">0x4E7</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4E3</span>,  <span class="number">0x4E9</span>,  <span class="number">0x4F0</span>,  <span class="number">0x4F3</span>,  <span class="number">0x485</span>,  <span class="number">0x480</span>,</span><br><span class="line">                        <span class="number">0x484</span>,  <span class="number">0x4F2</span>,  <span class="number">0x4F4</span>,  <span class="number">0x4F3</span>&#125;;</span><br><span class="line">    for(unsigned int i=<span class="number">0</span>;i&lt;<span class="number">0xff</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		for(unsigned int j=<span class="number">0</span>;j&lt;<span class="number">22</span>;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(<span class="string">"%c"</span>,data[j]^i);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(<span class="string">"<span class="subst">\n</span>%X<span class="subst">\n</span>"</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>7.运行得到flag</p>
-<p><img data-src="flag.jpg" alt="flag" /></p>
-<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe01_97D2BF0DBD2EC13065E7104F24CAAED9.zip" target="_blank" rel="noopener">download</a></p>
+<img data-src="migong.jpg" width=40%>
+<blockquote>
+<p>8,2保特横向位置不变，纵向分别随着循环向上一格和向下一格；Q，S保持纵向位置不变，横向分别向左一格和向右一格 ;c3为终点，左上ff为起点，沿着0走，路径选择结果为27S281S182S327S287S323Q124S281S1。参与运算的定值为0x2f。依据奇数位字符选择switch case，其右边的偶数位字符-0x30,结果进行累加，最后累加值就是0x2f。</p>
+</blockquote>
+<ul>
+<li>跑完之后，发现只累加到了0x2e，还差1，那么这个1到哪里去找呢？我们打开‘s’的case，发现有一点不一样：</li>
+</ul>
+<img data-src="calls.jpg" width=40%>
+<blockquote>
+<p>在00402923处，就是比较取值是否为0的，别的call检查失败直接置标志返回，这里跳到了0040293B，检查取数是否为0xFF，如果是直接返回，不置失败标记。正好到终点处右边为0xff，且S循环一次是右移一格，取数，所以最后加上S1即可。</p>
+</blockquote>
+<ul>
+<li>此题多解原因是如果偶数为0x30，则不进行循环，0x2f累加值也为零，对最后的正确流程没有影响。所以是可以随意附加&quot;20&quot;、“80”、“Q0”、'S0&quot;，从而产生多解。</li>
+</ul>
+<h3 id="解题脚本"><a class="markdownIt-Anchor" href="#解题脚本"></a> 解题脚本</h3>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">key = <span class="string">'B1nGzL[4st-TeAm]'</span></span><br><span class="line">iv = <span class="string">'\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F'</span></span><br><span class="line">path = <span class="string">'27S281S182S327S287S323Q124S281S1'</span>.encode(<span class="string">'base64'</span>).strip()</span><br><span class="line">m = path + <span class="string">'\x00'</span>*<span class="number">4</span></span><br><span class="line">cryptor = AES.new(key,AES.MODE_CBC,iv)</span><br><span class="line">cryptortext = cryptor.encrypt(m)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"==================================================="</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'cryptortext:'</span>+cryptortext.encode(<span class="string">'hex'</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'==================================================='</span></span><br></pre></td></tr></table></figure>
+<p>结果得到<code>flag{235cfe4e617b3656758e14ca51d981a9e5623be7424a244ae93d8a48cf9cf7f0a84649f35fdd9a47e7afef01dfc9f639}</code></p>
+<h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3>
+<ul>
+<li>关于AES的识别，还是直接用IDA的插件来的比较实在，不过最好是能识别出算法的特征，就像下面这个（个人瞎猜，欢迎大佬指正）：</li>
+</ul>
+<img data-src="AES.jpg" width=40%>
+<blockquote>
+<p>感觉已经有一点AES的影子了……</p>
+</blockquote>
+<ul>
+<li>迷宫问题还是reverse中的热门问题……虽然很难……</li>
+</ul>
+<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe02.exe" target="_blank" rel="noopener">download</a></p>
 ]]></content>
       <categories>
         <category>writeup</category>
@@ -662,175 +831,6 @@
         <tag>writeup</tag>
         <tag>ctf</tag>
         <tag>reverse</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>NexT主题插件hexo-next-photos</title>
-    <url>/hexo//hexo-next-photos/</url>
-    <content><![CDATA[<blockquote>
-<p>hexo-next-photos插件中文说明</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="hexo-next-photos"><a class="markdownIt-Anchor" href="#hexo-next-photos"></a> hexo-next-photos</h1>
-<h2 id="升级说明"><a class="markdownIt-Anchor" href="#升级说明"></a> 升级说明</h2>
-<ul>
-<li>现在该插件支持图床链接</li>
-<li>升级此插件请认真阅读本文后进行升级，避免出现不必要的麻烦，若有问题请在下方留言，我会认真查看</li>
-</ul>
-<h2 id="插件效果"><a class="markdownIt-Anchor" href="#插件效果"></a> 插件效果</h2>
-<p><a href="https://jygzyc.github.io/photos/">https://jygzyc.github.io/photos/</a></p>
-<h2 id="如何使用"><a class="markdownIt-Anchor" href="#如何使用"></a> 如何使用</h2>
-<h3 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h3>
-<ul>
-<li>执行 <code>npm install hexo-next-photos --save</code> 命令</li>
-<li>然后需要你去修改NexT主题模板，添加如下内容至文件。</li>
-</ul>
-<h3 id="body-endswig"><a class="markdownIt-Anchor" href="#body-endswig"></a> body-end.swig</h3>
-<ul>
-<li>如果之前安装了此插件，请删除 <code>/source/_data/body-end.swig</code>中如下代码</li>
-<li>若之前并没有安装过此插件，请确保该文件已被创建（无需添加内容）</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% if page.type &#x3D;&#x3D;&#x3D;&#39;photos&#39; %&#125;</span><br><span class="line">  &lt;script src&#x3D;&quot;&#x2F;js&#x2F;photo.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="stylesstyl"><a class="markdownIt-Anchor" href="#stylesstyl"></a> styles.styl</h3>
-<ul>
-<li>如果之前安装了此插件，请删除 <code>/source/_data/styles.styl</code>中如下代码</li>
-<li>若之前并没有安装过此插件，请确保该文件已被创建（无需添加内容）</li>
-</ul>
-<figure class="highlight styl"><table><tr><td class="code"><pre><span class="line"><span class="comment">//album style</span></span><br><span class="line"><span class="selector-class">.ImageGrid</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">max-width</span>:<span class="number">1040px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line">  <span class="attribute">column-count</span>: <span class="number">1</span>;</span><br><span class="line">  <span class="attribute">column-gap</span>: <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">@media (<span class="attribute">min-width</span>: <span class="number">500px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.ImageGrid</span> &#123;</span><br><span class="line">        <span class="attribute">column-count</span>: <span class="number">2</span>; <span class="comment">// two columns on larger phones</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.card</span> &#123;</span><br><span class="line">        <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">        <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">@media (<span class="attribute">min-width</span>: <span class="number">800px</span>) &#123;</span><br><span class="line">    <span class="selector-class">.ImageGrid</span> &#123;</span><br><span class="line">        <span class="attribute">column-count</span>: <span class="number">3</span>; <span class="comment">// two columns on larger phones</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="selector-class">.card</span> &#123;</span><br><span class="line">        <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">        <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">        <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">        <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">break-inside</span>: avoid;</span><br><span class="line">  <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">4px</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#ddd</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.ImageInCard</span> <span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">0</span> <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.TextInCard</span> &#123;</span><br><span class="line">  <span class="attribute">background-color</span>: rgba(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>, <span class="number">0.8</span>);</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">70%</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="_configyml"><a class="markdownIt-Anchor" href="#_configyml"></a> _config.yml</h3>
-<ul>
-<li>在你的博客根目录，找到 _config.yml 文件然后添加如下的配置项，并且配置相应的URL</li>
-<li>若之前安装过此插件，请重置config配置如下：</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-next-photos</span></span><br><span class="line"><span class="attr">hexo_next_photos:</span></span><br><span class="line">  <span class="attr">modes         :</span> <span class="string">figureBed</span> <span class="comment"># or repository</span></span><br><span class="line">  <span class="attr">pictureUrl    :</span>           <span class="comment"># if repositry, please put your repos URL here</span></span><br><span class="line">  <span class="attr">pictureDirPath:</span>           <span class="comment"># the dir put your photos or linkList.txt file, default: Your blog path/pictureDir/</span></span><br></pre></td></tr></table></figure>
-<p>repos例子：</p>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">hexo_next_photos:</span></span><br><span class="line">  <span class="attr">modes:</span>          <span class="string">repository</span></span><br><span class="line">  <span class="attr">pictureUrl:</span>     <span class="string">https://dev.tencent.com/u/username/p/repos/git/raw/master/photos/</span> <span class="comment"># photos url</span></span><br><span class="line">  <span class="attr">pictureDirPath:</span> <span class="string">photoDir</span> <span class="comment"># photo dir path is 'Your blog path/photoDir/'</span></span><br></pre></td></tr></table></figure>
-<p>图床例子：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># hexo-next-photos</span></span><br><span class="line"><span class="attr">hexo_next_photos:</span></span><br><span class="line">  <span class="attr">modes         :</span> <span class="string">figureBed</span> </span><br><span class="line">  <span class="attr">pictureUrl    :</span> </span><br><span class="line">  <span class="attr">pictureDirPath:</span> <span class="string">testDir</span>   <span class="comment"># your linkList file is 'Your blog path/testDir/linkList.txt'</span></span><br></pre></td></tr></table></figure>
-<h3 id="nextyml"><a class="markdownIt-Anchor" href="#nextyml"></a> next.yml</h3>
-<ul>
-<li>方法一：在你的博客主题目录，找到 _config.yml 文件然后添加如下的配置项</li>
-<li>方法二（推荐）：在<code>/source/_data/</code>目录下新建<code>next.yml</code>，并将主题配置文件的内容全部复制过来，然后再修改下列配置项（之前已经新建过<code>next.yml</code>的直接修改就可以了）</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">custom_file_path:</span></span><br><span class="line"><span class="bullet">-</span>  <span class="comment">#bodyEnd: source/_data/body-end.swig</span></span><br><span class="line"><span class="string">+</span>  <span class="attr">bodyEnd:</span> <span class="string">source/_data/body-end.swig</span></span><br><span class="line"><span class="bullet">-</span>  <span class="comment">#style: source/_data/styles.styl</span></span><br><span class="line"><span class="string">+</span>  <span class="attr">style:</span> <span class="string">source/_data/styles.styl</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Third Party Plugins &amp; Services Settings</span></span><br><span class="line"><span class="comment"># See: https://theme-next.org/docs/third-party-services/</span></span><br><span class="line"><span class="comment"># You may need to install dependencies or set CDN URLs in `vendors`</span></span><br><span class="line"><span class="comment"># There are two different CDN providers by default:</span></span><br><span class="line"><span class="comment">#   - jsDelivr (cdn.jsdelivr.net), works everywhere even in China</span></span><br><span class="line"><span class="comment">#   - CDNJS (cdnjs.cloudflare.com), provided by cloudflare</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">fancybox:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">+</span> <span class="attr">fancybox:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"><span class="bullet">-</span> <span class="attr">lazyload:</span> <span class="literal">false</span></span><br><span class="line"><span class="string">+</span> <span class="attr">lazyload:</span> <span class="literal">true</span></span><br><span class="line"><span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="comment"># FancyBox</span></span><br><span class="line">  <span class="comment"># jquery: //cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span></span><br><span class="line">  <span class="comment"># fancybox: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js</span></span><br><span class="line">  <span class="comment"># fancybox_css: //cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css</span></span><br><span class="line">  <span class="attr">jquery:</span></span><br><span class="line">  <span class="attr">fancybox:</span>  <span class="comment"># choose a faster CDN</span></span><br><span class="line">  <span class="attr">fancybox_css:</span> <span class="comment"># choose a faster CDN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Lazyload</span></span><br><span class="line">  <span class="comment"># lazyload: //cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js</span></span><br><span class="line">  <span class="comment"># lazyload: //cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js</span></span><br><span class="line">  <span class="attr">lazyload:</span> <span class="comment"># choose a faster CDN</span></span><br></pre></td></tr></table></figure>
-<h3 id="新建页面"><a class="markdownIt-Anchor" href="#新建页面"></a> 新建页面</h3>
-<ul>
-<li>新建照片页面 <code>hexo new page photos</code>，新建 <code>/source/photos/index.md</code>, 添加如下代码:</li>
-</ul>
-<figure class="highlight md"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Photos</span><br><span class="line">type: photos</span><br><span class="line">---</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"ImageGrid"</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>添加如下代码至主题配置文件（前面提到的<code>next.yml</code>）</li>
-</ul>
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="string">+</span> <span class="attr">photos:</span> <span class="string">/photos/</span> <span class="string">||</span> <span class="string">fa</span> <span class="string">fa-camera</span></span><br></pre></td></tr></table></figure>
-<h3 id="linklisttxt文件图床模式使用"><a class="markdownIt-Anchor" href="#linklisttxt文件图床模式使用"></a> linkList.txt文件（图床模式使用）</h3>
-<ul>
-<li>新建linkList.txt文件在config指定的目录下，若没有指定，默认为<code>pictureDir</code>，填入图床中图片的链接，样例如下:</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbueyT.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuZlV.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuVS0.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbukYn.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuFFs.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuPoj.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuCwQ.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;Ybu9eg.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbuSOS.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;Ybnzy8.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbnxQf.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbnvSP.jpg</span><br><span class="line">https:&#x2F;&#x2F;s1.ax1x.com&#x2F;2020&#x2F;05&#x2F;21&#x2F;YbnXWt.jpg</span><br></pre></td></tr></table></figure>
-<h3 id="放入照片repos模式使用"><a class="markdownIt-Anchor" href="#放入照片repos模式使用"></a> 放入照片（repos模式使用）</h3>
-<ul>
-<li>新建 <code>originPhotos</code> 文件夹，放在博客根目录</li>
-<li>放入照片</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">blog  </span><br><span class="line">└───node_modules&#x2F;</span><br><span class="line">└───scaffolds&#x2F;</span><br><span class="line">│   ...</span><br><span class="line">│   _config.yml</span><br><span class="line">└───oringinPhotos&#x2F;</span><br><span class="line">│   │   Put your photos here, please keep your photos names same as your URL photos names</span><br><span class="line">|   |   ...</span><br><span class="line">|   package.json</span><br><span class="line">|   ...</span><br></pre></td></tr></table></figure>
-<p>这样，我们就可以使用插件了。</p>
-<h2 id="存在的问题"><a class="markdownIt-Anchor" href="#存在的问题"></a> 存在的问题</h2>
-<ul>
-<li>图床模式下，图床的响应速度同图床本身有关，存在速度较慢的情况</li>
-</ul>
-<h2 id="致谢"><a class="markdownIt-Anchor" href="#致谢"></a> 致谢</h2>
-<p><a href="https://github.com/MikeCoder/hexo-tag-cloud" target="_blank" rel="noopener">hexo-tag-cloud</a></p>
-]]></content>
-      <categories>
-        <category>hexo</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>C++ Vector解析</title>
-    <url>/program/c/c-Vector%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<blockquote>
-<p>在写程序的时候看见别人用了vector，然而我还不太了解，那就学习记录一下。</p>
-</blockquote>
-<a id="more"></a>
-<h1 id="什么是vector"><a class="markdownIt-Anchor" href="#什么是vector"></a> 什么是vector</h1>
-<p>菜鸟教程里的解释是这样：</p>
-<blockquote>
-<p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</p>
-</blockquote>
-<h1 id="vector的性质"><a class="markdownIt-Anchor" href="#vector的性质"></a> vector的性质</h1>
-<ul>
-<li>
-<p>顺序存储<br />
-容器内元素按顺序排列，类似数组，可通过位置访问对应元素。</p>
-</li>
-<li>
-<p>动态数组<br />
-当元素插入或删除时能够自动改变容器大小。</p>
-</li>
-</ul>
-<h1 id="vector实例"><a class="markdownIt-Anchor" href="#vector实例"></a> vector实例</h1>
-<h2 id="引入"><a class="markdownIt-Anchor" href="#引入"></a> 引入</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br></pre></td></tr></table></figure>
-<h2 id="在容器最后增加删除元素"><a class="markdownIt-Anchor" href="#在容器最后增加删除元素"></a> 在容器最后增加/删除元素</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">obj.pop_back();</span><br><span class="line">obj.pop_back();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,</span><br></pre></td></tr></table></figure>
-<h2 id="清除容器内所有元素"><a class="markdownIt-Anchor" href="#清除容器内所有元素"></a> 清除容器内所有元素</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">obj.<span class="built_in">clear</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br></pre></td></tr></table></figure>
-<h2 id="容器元素排序"><a class="markdownIt-Anchor" href="#容器元素排序"></a> 容器元素排序</h2>
-<p>我们需要用到头文件algorithm中的sort方法，所以首先引入头文件：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::sort;</span><br></pre></td></tr></table></figure>
-<p>引入后，我们使用以下代码测试：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">sort(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">reverse(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">8</span> <span class="number">6</span> <span class="number">9</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">4</span>,</span><br><span class="line"><span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,</span><br><span class="line"><span class="number">9</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">1</span>,</span><br></pre></td></tr></table></figure>
-<p>这里，我们用到了begin和end函数，当容器中有元素时，begin操作指向第一个元素，end操作则指向容器末端元素的“下一个”，即指向了一个不存在的元素，我们在<a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8">迭代器</a>一节中将会进一步看到这两个函数的使用。</p>
-<p>若需要从大到小排序，我们只需要添加sort函数的参数并重写规则即可：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">sort(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>(), compare);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>compare函数内容如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b; <span class="comment">//降序排列</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">9</span> <span class="number">8</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line"><span class="number">1</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">6</span>,</span><br><span class="line"><span class="number">9</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">1</span>,</span><br></pre></td></tr></table></figure>
-<p>除此以外，我们还需要迭代器辅助实现一些功能。</p>
-<h1 id="迭代器"><a class="markdownIt-Anchor" href="#迭代器"></a> 迭代器</h1>
-<h2 id="迭代器定义"><a class="markdownIt-Anchor" href="#迭代器定义"></a> 迭代器定义</h2>
-<p>以下这段定义引自维基百科：</p>
-<blockquote>
-<p>迭代器（iterator）有时又称游标（cursor）是程式设计的软件设计模式，可在容器物件（container，例如链表或阵列）上遍访的介面，设计人员无需关心容器物件的内存分配的实现细节。</p>
-</blockquote>
-<p>简单来说，迭代器(iterator)是一中检查容器内元素并遍历元素的数据类型。<br />
-那么我们需要用迭代器干什么呢？ 很简单，遍历。</p>
-<h2 id="vector引用iterator实例"><a class="markdownIt-Anchor" href="#vector引用iterator实例"></a> vector引用iterator实例</h2>
-<h3 id="遍历"><a class="markdownIt-Anchor" href="#遍历"></a> 遍历</h3>
-<p>迭代器可通过自增操作来访问迭代器所指向的元素，可以类比一下C语言中的指针。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (it = obj.<span class="built_in">begin</span>(); it != obj.<span class="built_in">end</span>(); it++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="string">", "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>,</span><br></pre></td></tr></table></figure>
-<h3 id="查找"><a class="markdownIt-Anchor" href="#查找"></a> 查找</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it; <span class="comment">//定义迭代器</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">it = <span class="built_in">find</span>(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>(), <span class="number">3</span>); <span class="comment">//查找目标为数字3</span></span><br><span class="line"><span class="keyword">if</span> (it == obj.<span class="built_in">end</span>())</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">if</span> (it != obj.<span class="built_in">end</span>())</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
-<p>测试与返回结果如下所示：</p>
-<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
-<h1 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h1>
-<ul>
-<li><a href="https://www.runoob.com/w3cnote/cpp-vector-container-analysis.html" target="_blank" rel="noopener">C++ vector 容器浅析</a></li>
-<li><a href="https://blog.csdn.net/duan19920101/article/details/50617190" target="_blank" rel="noopener">C++ 中vector的使用方法</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E8%BF%AD%E4%BB%A3%E5%99%A8" target="_blank" rel="noopener">迭代器</a></li>
-<li><a href="https://blog.csdn.net/zhanh1218/article/details/33340959" target="_blank" rel="noopener">C/C++迭代器使用详解</a></li>
-<li><a href="https://www.kancloud.cn/wangshubo1989/vector/101102" target="_blank" rel="noopener">实战c++中的vector系列</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>program</category>
-        <category>c</category>
-      </categories>
-      <tags>
-        <tag>program</tag>
-        <tag>c</tag>
       </tags>
   </entry>
   <entry>
@@ -1066,154 +1066,175 @@ Y_R &amp;= (\lambda(X_P - X_R)-Y_P) \mod P\\
       </tags>
   </entry>
   <entry>
-    <title>baidu-201711-CrackMe02</title>
-    <url>/writeup/baidu-201711-CrackMe02/</url>
-    <content><![CDATA[<h2 id="environment"><a class="markdownIt-Anchor" href="#environment"></a> environment</h2>
-<blockquote>
-<p>后面会用到python的环境，在这里就先配好，个人用的是 python2.7 的环境，配置如下：</p>
+    <title>UEFI原理与实践笔记_开发环境搭建</title>
+    <url>/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<blockquote>
+<p>UEFI原理与实践笔记（一）-开发环境搭建<br />
+记录一下在Windows环境下搭建UEFI开发环境的过程</p>
 </blockquote>
 <a id="more"></a>
+<h1 id="配置windows开发环境"><a class="markdownIt-Anchor" href="#配置windows开发环境"></a> 配置Windows开发环境</h1>
+<h2 id="下载安装所需工具"><a class="markdownIt-Anchor" href="#下载安装所需工具"></a> 下载安装所需工具</h2>
+<p>我们首先需要安装EDK2所依赖的开发工具及本身。</p>
+<h3 id="vs2019"><a class="markdownIt-Anchor" href="#vs2019"></a> vs2019</h3>
+<p>安装 Visual Studio 2019 作为主要的开发工具<br />
+下载地址：<a href="https://visualstudio.microsoft.com/zh-hans/free-developer-offers/" target="_blank" rel="noopener">https://visualstudio.microsoft.com/zh-hans/free-developer-offers/</a><br />
+我们勾选如下的选项即可：<br />
+<img data-src="vs2019.png" alt="安装" /><br />
+选用vs2019的原因是当前EDK2推荐的版本就是vs2019，比较稳定。<br />
+装好之后，我们可以将<code>Developer Command Prompt for VS 2019</code>这个快捷方式单独提出来，之后会频繁用到。</p>
+<h3 id="edk2"><a class="markdownIt-Anchor" href="#edk2"></a> EDK2</h3>
+<p>Github地址：<a href="https://github.com/tianocore/edk2" target="_blank" rel="noopener">https://github.com/tianocore/edk2</a><br />
+最好下载最新的release版本，将EDK2目录解压后放在<code>C:</code>目录下。</p>
+<h3 id="python-38"><a class="markdownIt-Anchor" href="#python-38"></a> Python 3.8</h3>
+<p>下载地址：<a href="https://www.python.org/ftp/python/3.8.1/python-3.8.1.exe" target="_blank" rel="noopener">https://www.python.org/ftp/python/3.8.1/python-3.8.1.exe</a><br />
+安装时最好勾选添加到环境变量中，不然之后还得自己配。</p>
+<h3 id="nasm"><a class="markdownIt-Anchor" href="#nasm"></a> NASM</h3>
+<p>下载地址：<a href="https://www.nasm.us/" target="_blank" rel="noopener">https://www.nasm.us/</a><br />
+同样，将NASM安装到<code>C:</code>目录下，并将目录添加到系统环境变量Path中。</p>
+<h3 id="iasl"><a class="markdownIt-Anchor" href="#iasl"></a> iasl</h3>
+<p>下载地址：<a href="https://acpica.org/downloads/binary-tools" target="_blank" rel="noopener">https://acpica.org/downloads/binary-tools</a><br />
+将iasl安装到<code>C:</code>目录下，并将目录添加到系统环境变量Path中。</p>
+<h2 id="配置edk2开发环境"><a class="markdownIt-Anchor" href="#配置edk2开发环境"></a> 配置EDK2开发环境</h2>
+<h3 id="初始化环境"><a class="markdownIt-Anchor" href="#初始化环境"></a> 初始化环境</h3>
+<p>进入EDK2目录，运行<code>edksetup.bat</code>，此步骤用于建立Conf目录下的<code>target.txt</code>，<code>tools_def.txt</code>等文件。</p>
+<h3 id="编辑编译相关文件"><a class="markdownIt-Anchor" href="#编辑编译相关文件"></a> 编辑编译相关文件</h3>
+<p>编辑<code>Conf/target.txt</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">ACTIVE_PLATFORM       &#x3D; MdePkg&#x2F;MdePkg.dsc</span><br><span class="line">...</span><br><span class="line">TARGET                &#x3D; RELEASE</span><br><span class="line">...</span><br><span class="line">TARGET_ARCH           &#x3D; X64</span><br><span class="line">...</span><br><span class="line">TOOL_CHAIN_TAG        &#x3D; VS2019</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="编译uefi基础依赖包"><a class="markdownIt-Anchor" href="#编译uefi基础依赖包"></a> 编译UEFI基础依赖包</h2>
+<p>首先我们需要设置命令行能够包含vs2019的工具集，我们打开之前强调的<code>Developer Command Prompt for VS 2019</code>，从该命令行窗口进入EDK2目录，即<code>cd C:\edk2</code>。</p>
+<p>在每一次编译项目前，我们还要保证EDK2环境变量被设置，即运行<code>edksetup.bat</code>。</p>
+<p>当我们设置完环境后，就可以执行<code>build</code>命令了，这个命令能够分析工程文件，根据你的设置自动执行相应编译和连接命令。在上面我们修改了<code>target.txt</code>文件，这个文件相当于编译配置文件。</p>
+<p>在这里解释一下上面修改内容的含义：</p>
 <ul>
-<li>先到官网上下好<a href="https://www.python.org/downloads/release/python-2715/" target="_blank" rel="noopener">python 2.7</a>的安装包，安装。</li>
-<li>用 <code>pip install pycrypto</code>安装加密模块，如果出现<code>error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27</code>，我们就去<a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266" target="_blank" rel="noopener">安装</a>一下Windows对python的支持。</li>
-<li>上述都做完之后，打开<em>python</em>，输入 <code>from Crypto.Cipher import AES</code>，如果运行没有报错，就是配置成功了。</li>
+<li>MdePkg是UEFI环境下的基础库，地位差不多和C语言中的<code>stdio.h</code>类似，编译这个库后自己写的工程模块才能进行依赖运行。</li>
+<li>我们在这里编译的程序架构为<code>X64</code>，所以最后编译版本为<code>Release</code>，若为32位架构则可以选择编译版本为<code>DEBUG</code>，在这里不作讨论。</li>
+<li>工具链选择为vs2019</li>
 </ul>
-<h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
+<p><code>build</code>命令执行后，若结果为<code>Done</code>，则说明环境配置成功。</p>
+<h2 id="编译cryptopkg"><a class="markdownIt-Anchor" href="#编译cryptopkg"></a> 编译CryptoPkg</h2>
+<h3 id="补全cryptopkg"><a class="markdownIt-Anchor" href="#补全cryptopkg"></a> 补全CryptoPkg</h3>
+<p>在进行下个步骤之前，我们需要先编译CryptoPkg，我们打开<code>edk2/CryptoPkg/Library/OpensslLib/openssl</code>，发现是一个空的文件夹，我们需要下载OpenSSL的对应版本，先将CryptoPkg补全。</p>
+<p>我们去<a href="https://github.com/tianocore/edk2/releases" target="_blank" rel="noopener">EDK2 release</a>找到自己下载的版本，在这里我们能找到对应所需的OpenSSL版本，我的EDK2版本是<code>edk2-stable201911</code>，对应的OpenSSL版本是<code>1.1.1d</code>。到OpenSSL官方下载：<a href="https://github.com/openssl/openssl/releases" target="_blank" rel="noopener">https://github.com/openssl/openssl/releases</a>，解压并放到指定文件夹中。</p>
+<h3 id="编译"><a class="markdownIt-Anchor" href="#编译"></a> 编译</h3>
+<p>同上，编辑<code>target.txt</code>文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">...</span><br><span class="line">ACTIVE_PLATFORM       &#x3D; CryptoPkg&#x2F;CryptoPkg.dsc</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p><code>build</code>命令执行后，若结果为<code>Done</code>，则说明编译成功。</p>
+<h1 id="安装并编译uefi模拟器"><a class="markdownIt-Anchor" href="#安装并编译uefi模拟器"></a> 安装并编译UEFI模拟器</h1>
+<h2 id="安装qemu虚拟机"><a class="markdownIt-Anchor" href="#安装qemu虚拟机"></a> 安装QEMU虚拟机</h2>
+<p>下载地址：<a href="https://www.qemu.org/download/#windows" target="_blank" rel="noopener">https://www.qemu.org/download/#windows</a></p>
+<h2 id="编译ovmf模拟器"><a class="markdownIt-Anchor" href="#编译ovmf模拟器"></a> 编译OVMF模拟器</h2>
+<p>引用一下官方对OVMF的介绍：</p>
 <blockquote>
-<p>做之前可以去看看<a href="https://www.ichunqiu.com/course/56677" target="_blank" rel="noopener">大表哥的整理思路的视频</a>，确实很厉害。<br />
-跑这道题算是我学od这么长时间以来最复杂的一个了……跑到吐血</p>
+<p>OVMF is an EDK II based project to enable UEFI support for Virtual Machines. OVMF contains sample UEFI firmware for QEMU and KVM.</p>
 </blockquote>
-<h3 id="找切入点"><a class="markdownIt-Anchor" href="#找切入点"></a> 找切入点</h3>
-<ul>
-<li>打开这道题，发现是一个checkSN，我们打开IDA查看导入地址表和函数引用，这里常用的有两个，分别是 <code>GetWindowTextA</code>和<code>GetDlgItemTextA</code>，我们初步查看后发现<code>GetDlgItemTextA</code>所在的地方是函数的主体，而且整体只有这一个函数，我们用od在<code>GetDlgItemTextA</code>下bp，f9运行。</li>
-</ul>
-<h3 id="梳理函数逻辑"><a class="markdownIt-Anchor" href="#梳理函数逻辑"></a> 梳理函数逻辑</h3>
-<ul>
-<li>随便输入几个字符CheckSN，在这里我输入的是“123456”。</li>
-<li>一直往下跑，直到 <code>GetDlgItemTextA</code> 函数出现。</li>
-</ul>
-<img data-src="main1.jpg" width=40%>
-<blockquote>
-<p>函数往上是在初始化堆栈空间，到了下面的<code>call</code>，能在内存看见输入的’123456‘以16进制放在内存中。<br />
-具体来说应该是’12  34  56‘。</p>
-</blockquote>
-<ul>
-<li>继续跟踪，我们在00402653处进入AES解密函数。</li>
-</ul>
-<img data-src="main2.jpg" width=40%>
-<img data-src="main3.jpg" width=40%>
-<img data-src="main4.jpg" width=40%>
-<blockquote>
-<p>先进行AES分组解密，密钥为B1nGzL[4st-TeAm]，IV向量16进制为000102030405060708090A0B0C0D0E0F，使用CBC模式。如果输入转成的16进制长度不是16的倍数，则分组觖密后剩下的会进行ECB模式的解密，密钥不变。 回主流程。</p>
-</blockquote>
-<img data-src="main5.jpg" width=40%>
-<ul>
-<li>回到主流程后，得到结果进行base64解码，地址为00401990；之后进入迷宫选择，这里我们看IDA的解析会更清楚一点。</li>
-</ul>
-<img data-src="jump.jpg" width=40%>
-<blockquote>
-<p>swich选择。其原值必须为&quot;82QS&quot;中的一个，不然就是进入default，这是一条死亡之路。 switch中的call循环做完之后，在0040273A 检查0018F1E4 是否为1，为1就game over。整理一下内存查看迷宫如下：</p>
-</blockquote>
-<img data-src="migong.jpg" width=40%>
-<blockquote>
-<p>8,2保特横向位置不变，纵向分别随着循环向上一格和向下一格；Q，S保持纵向位置不变，横向分别向左一格和向右一格 ;c3为终点，左上ff为起点，沿着0走，路径选择结果为27S281S182S327S287S323Q124S281S1。参与运算的定值为0x2f。依据奇数位字符选择switch case，其右边的偶数位字符-0x30,结果进行累加，最后累加值就是0x2f。</p>
-</blockquote>
-<ul>
-<li>跑完之后，发现只累加到了0x2e，还差1，那么这个1到哪里去找呢？我们打开‘s’的case，发现有一点不一样：</li>
-</ul>
-<img data-src="calls.jpg" width=40%>
-<blockquote>
-<p>在00402923处，就是比较取值是否为0的，别的call检查失败直接置标志返回，这里跳到了0040293B，检查取数是否为0xFF，如果是直接返回，不置失败标记。正好到终点处右边为0xff，且S循环一次是右移一格，取数，所以最后加上S1即可。</p>
-</blockquote>
-<ul>
-<li>此题多解原因是如果偶数为0x30，则不进行循环，0x2f累加值也为零，对最后的正确流程没有影响。所以是可以随意附加&quot;20&quot;、“80”、“Q0”、'S0&quot;，从而产生多解。</li>
-</ul>
-<h3 id="解题脚本"><a class="markdownIt-Anchor" href="#解题脚本"></a> 解题脚本</h3>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">key = <span class="string">'B1nGzL[4st-TeAm]'</span></span><br><span class="line">iv = <span class="string">'\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F'</span></span><br><span class="line">path = <span class="string">'27S281S182S327S287S323Q124S281S1'</span>.encode(<span class="string">'base64'</span>).strip()</span><br><span class="line">m = path + <span class="string">'\x00'</span>*<span class="number">4</span></span><br><span class="line">cryptor = AES.new(key,AES.MODE_CBC,iv)</span><br><span class="line">cryptortext = cryptor.encrypt(m)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"==================================================="</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'cryptortext:'</span>+cryptortext.encode(<span class="string">'hex'</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'==================================================='</span></span><br></pre></td></tr></table></figure>
-<p>结果得到<code>flag{235cfe4e617b3656758e14ca51d981a9e5623be7424a244ae93d8a48cf9cf7f0a84649f35fdd9a47e7afef01dfc9f639}</code></p>
-<h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3>
-<ul>
-<li>关于AES的识别，还是直接用IDA的插件来的比较实在，不过最好是能识别出算法的特征，就像下面这个（个人瞎猜，欢迎大佬指正）：</li>
-</ul>
-<img data-src="AES.jpg" width=40%>
-<blockquote>
-<p>感觉已经有一点AES的影子了……</p>
-</blockquote>
-<ul>
-<li>迷宫问题还是reverse中的热门问题……虽然很难……</li>
-</ul>
-<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe02.exe" target="_blank" rel="noopener">download</a></p>
+<p>简单来说，就是OVMF能够为虚拟机提供UEFI支持，能够为QEMU虚拟机提供UEFI固件样本。</p>
+<p>在之前编译<code>MdePkg</code>时，我们需要修改<code>target.txt</code>文件，由于每次编译都得修改<code>target.txt</code>中的<code>ACTIVE_PLATFORM</code>选项过于麻烦，我们直接给<code>build</code>命令附加参数：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line">build -a X64 -p OvmfPkg/OvmfPkg.dsc</span><br></pre></td></tr></table></figure>
+<p><code>-p</code>选项为通过指定<code>.dsc</code>文件指定要编译的Package，这个选项会取代<code>target.txt</code>中的<code>ACTIVE_PLATFORM</code>选项；<code>-a</code>选项选择目标平台，这个选项会取代<code>target.txt</code>中的<code>TARGET_ARCH</code>选项。</p>
+<h2 id="建立目录"><a class="markdownIt-Anchor" href="#建立目录"></a> 建立目录</h2>
+<p>若编译成功，我们能够在<code>edk2/Build</code>目录下见到我们先前编译的所有文件，<br />
+找到<code>edk2/Build/OvmfX64/RELEASE_VS2019/FV/OVMF.fd</code>文件，这就是我们需要的UEFI样本。</p>
+<p>在任意地方新建一个目录，目录结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ovmf  名字可以自己起</span><br><span class="line">|</span><br><span class="line">│   OVMF.fd</span><br><span class="line">│   run.bat</span><br><span class="line">└───hda-contents</span><br><span class="line">│   │   这里将存放之后编译好的.efi文件</span><br><span class="line">|   |   文件夹的名称要和下面的 run.bat 脚本中的文件夹名称保持一致</span><br></pre></td></tr></table></figure>
+<p>其中，<code>OVMF.fd</code>就是编译好的文件，<code>run.bat</code>的内容如下：</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">qemu-system-x86_64 -drive file=OVMF.fd,<span class="keyword">if</span>=pflash,<span class="built_in">format</span>=raw,unit=<span class="number">0</span>,readonly=on -drive file=fat:rw:.\hda-contents\,media=disk,<span class="keyword">if</span>=virtio,<span class="built_in">format</span>=raw -m <span class="number">512</span> -machine q35,smm=on -nodefaults -vga std -global driver=cfi.pflash01,property=secure,value=on -global ICH9-LPC.disable_s3=<span class="number">1</span></span><br></pre></td></tr></table></figure>
+<p>此时我们执行<code>run.bat</code>，可以看到如下的界面：</p>
+<p><img data-src="ovmf.png" alt="UEFI模拟器启动界面" /></p>
+<p>在<code>Shell &gt;</code>后输入<code>fs0:</code>即可进入到存放文件的位置，因为目前还没有任何工程，所以没有<code>.efi</code>可执行文件。</p>
+<h1 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h1>
+<p>UEFI原理与编程/戴正华著 2015.1</p>
 ]]></content>
       <categories>
-        <category>writeup</category>
+        <category>UEFI</category>
       </categories>
       <tags>
-        <tag>writeup</tag>
-        <tag>ctf</tag>
-        <tag>reverse</tag>
+        <tag>UEFI</tag>
       </tags>
   </entry>
   <entry>
-    <title>win10&amp;deepin双系统搭建</title>
-    <url>/environment/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/</url>
+    <title>C++ Vector解析</title>
+    <url>/program/c/c-Vector%E8%A7%A3%E6%9E%90/</url>
     <content><![CDATA[<blockquote>
-<p>记录一下双系统搭建中出现的问题</p>
+<p>在写程序的时候看见别人用了vector，然而我还不太了解，那就学习记录一下。</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="win10磁盘分区"><a class="markdownIt-Anchor" href="#win10磁盘分区"></a> Win10磁盘分区</h1>
-<p>我的电脑是128G SSD +1T 机械硬盘的组合，最初我试过将系统搭建在机械硬盘上，但是效果并不好（开机速度实在是太慢了），本次决定将系统搭建在两块硬盘上，详细的分区如下图（其实应该显示未分配空间，但是已经安装完了嘛……我也没法倒回去）：</p>
-<p><img data-src="partition.png" alt="分区" /></p>
+<h1 id="什么是vector"><a class="markdownIt-Anchor" href="#什么是vector"></a> 什么是vector</h1>
+<p>菜鸟教程里的解释是这样：</p>
 <blockquote>
-<p><strong>分区之前切记备份数据！切记！</strong></p>
+<p>向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</p>
 </blockquote>
-<p>具体的分区事项百度一下就有，我就不多说了。下面说一点会出现的问题：</p>
-<h2 id="c盘分区"><a class="markdownIt-Anchor" href="#c盘分区"></a> C盘分区</h2>
-<p>在分区的时候，可能C盘会遇到一点点的小麻烦——发现明明剩余空间还很大，为什么分区的时候分不出那么多空间来呢？针对这个问题，我们有以下解决办法：</p>
-<ol>
-<li>查看 此电脑 -&gt; 属性 -&gt; 系统保护 -&gt; 关闭C盘保护。</li>
-<li>因为C盘是系统盘，所以我们采用第三方的分区软件（例如分区助手）进行磁盘分区，由于我的Win10版本是1803，比较新，所以采用制作启动光盘的方式，制作微PE系统引导后再进行C盘分区（引导启动下面会提到）<br />
-<img data-src="PA_Green.png" alt="第三方分区" /></li>
-</ol>
-<h2 id="引导启动"><a class="markdownIt-Anchor" href="#引导启动"></a> 引导启动</h2>
-<p>不同牌子的电脑有不同的进入BIOS的方法，针对Win10系统，我们也有比较温和的方法：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: 设置</span><br><span class="line">e&#x3D;&gt;end: UEFI固件设置</span><br><span class="line">op1&#x3D;&gt;operation: 更新和安全</span><br><span class="line">op2&#x3D;&gt;operation: 恢复</span><br><span class="line">op3&#x3D;&gt;operation: 高级启动</span><br><span class="line">op4&#x3D;&gt;operation: 疑难解答</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;op2(right)-&gt;op3(right)-&gt;op4(right)-&gt;e(right)</span><br></pre></td></tr></table></figure>
-<p>这样我们就可以安全地进入BIOS了，记得要关闭电源设置里的快速启动和BIOS的某个选项（绝对不是我忘了，绝对不是！）。</p>
-<h1 id="制作启动盘并安装"><a class="markdownIt-Anchor" href="#制作启动盘并安装"></a> 制作启动盘并安装</h1>
-<h2 id="制作启动盘"><a class="markdownIt-Anchor" href="#制作启动盘"></a> 制作启动盘</h2>
-<p>因为deepin官方给了制作启动盘的工具，只要有一个还算大的U盘和deepin系统镜像就行了，如果不想用官方的启动盘制作器，也可以用<a href="https://dev.tencent.com/u/jygzyc/p/blog_photos/git/raw/master/downloads/rufus-3.1.exe" target="_blank" rel="noopener">Rufus</a>。</p>
-<h2 id="安装系统"><a class="markdownIt-Anchor" href="#安装系统"></a> 安装系统</h2>
-<p>按上面说的将优先启动项换为U盘，即可开始安装，至于分区嘛，因为我是为了加快速度的，所以就把根目录装在SSD，其余的分到机械硬盘上，具体分区的样子可以看上面那张图，凡是没有盘符有没有特殊标识的都是deepin的分区，之后谁有需要我再把详细图放上来吧。</p>
-<h1 id="显卡驱动nvidia"><a class="markdownIt-Anchor" href="#显卡驱动nvidia"></a> <strong>显卡驱动（Nvidia）</strong></h1>
-<blockquote>
-<p>这里是最麻烦，也是最容易出问题的部分，我在这里参照了好多链接，最后才有了解决办法。<br />
-参考链接(其他的记不住了)：</p>
+<h1 id="vector的性质"><a class="markdownIt-Anchor" href="#vector的性质"></a> vector的性质</h1>
 <ul>
-<li><a href="https://www.cnblogs.com/necp-zwl/p/7024074.html" target="_blank" rel="noopener">https://www.cnblogs.com/necp-zwl/p/7024074.html</a></li>
+<li>
+<p>顺序存储<br />
+容器内元素按顺序排列，类似数组，可通过位置访问对应元素。</p>
+</li>
+<li>
+<p>动态数组<br />
+当元素插入或删除时能够自动改变容器大小。</p>
+</li>
 </ul>
-</blockquote>
-<h2 id="卡在logo界面"><a class="markdownIt-Anchor" href="#卡在logo界面"></a> 卡在logo界面</h2>
-<p>这里我们<code>ctrl+alt+F3</code>进入文本模式，然后禁用开源的驱动：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/modprobe.d/blacklist.deepin.conf</span><br><span class="line"><span class="comment"># 文末添加如下字段</span></span><br><span class="line">blacklist vga16fb</span><br><span class="line">blacklist nouveau</span><br><span class="line">blacklist rivafb</span><br><span class="line">blacklist rivatv</span><br><span class="line">blacklist nvidiafb</span><br><span class="line"><span class="comment"># :wq保存退出</span></span><br><span class="line">sudo upadte-initramfs -u <span class="comment">#没有这条命令的话就安装update-initramfs</span></span><br><span class="line">lsmod | grep nouveau <span class="comment">#无回显说明成功，有回显也不要慌，继续走</span></span><br></pre></td></tr></table></figure>
-<p>这时我们再<code>ctrl+alt+F1</code>回到图形界面（不行的话就重启），应该是可以正常登陆了。</p>
-<h2 id="安装nvidia驱动"><a class="markdownIt-Anchor" href="#安装nvidia驱动"></a> 安装Nvidia驱动</h2>
-<p>深度系统自己有驱动管理器，选择闭源的那个安装，如果成功则说明你很幸运，要是安装失败了，我们走接下来的流程：</p>
+<h1 id="vector实例"><a class="markdownIt-Anchor" href="#vector实例"></a> vector实例</h1>
+<h2 id="引入"><a class="markdownIt-Anchor" href="#引入"></a> 引入</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta"># <span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">vector</span>;</span><br></pre></td></tr></table></figure>
+<h2 id="在容器最后增加删除元素"><a class="markdownIt-Anchor" href="#在容器最后增加删除元素"></a> 在容器最后增加/删除元素</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;<span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">obj.pop_back();</span><br><span class="line">obj.pop_back();</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,</span><br></pre></td></tr></table></figure>
+<h2 id="清除容器内所有元素"><a class="markdownIt-Anchor" href="#清除容器内所有元素"></a> 清除容器内所有元素</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">obj.<span class="built_in">clear</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br></pre></td></tr></table></figure>
+<h2 id="容器元素排序"><a class="markdownIt-Anchor" href="#容器元素排序"></a> 容器元素排序</h2>
+<p>我们需要用到头文件algorithm中的sort方法，所以首先引入头文件：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::sort;</span><br></pre></td></tr></table></figure>
+<p>引入后，我们使用以下代码测试：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">sort(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">reverse(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>());</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">8</span> <span class="number">6</span> <span class="number">9</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">4</span>,</span><br><span class="line"><span class="number">1</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">9</span>,</span><br><span class="line"><span class="number">9</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">1</span>,</span><br></pre></td></tr></table></figure>
+<p>这里，我们用到了begin和end函数，当容器中有元素时，begin操作指向第一个元素，end操作则指向容器末端元素的“下一个”，即指向了一个不存在的元素，我们在<a href="#%E8%BF%AD%E4%BB%A3%E5%99%A8">迭代器</a>一节中将会进一步看到这两个函数的使用。</p>
+<p>若需要从大到小排序，我们只需要添加sort函数的参数并重写规则即可：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">sort(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>(), compare);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; obj.<span class="built_in">size</span>(); ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>compare函数内容如下：</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">compare</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b; <span class="comment">//降序排列</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">9</span> <span class="number">8</span> <span class="number">5</span> <span class="number">6</span></span><br><span class="line"><span class="number">1</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">6</span>,</span><br><span class="line"><span class="number">9</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">5</span>,<span class="number">1</span>,</span><br></pre></td></tr></table></figure>
+<p>除此以外，我们还需要迭代器辅助实现一些功能。</p>
+<h1 id="迭代器"><a class="markdownIt-Anchor" href="#迭代器"></a> 迭代器</h1>
+<h2 id="迭代器定义"><a class="markdownIt-Anchor" href="#迭代器定义"></a> 迭代器定义</h2>
+<p>以下这段定义引自维基百科：</p>
 <blockquote>
-<p>参考链接：</p>
-<ul>
-<li><a href="http://blog.51cto.com/lidongni/2105254" target="_blank" rel="noopener">http://blog.51cto.com/lidongni/2105254</a></li>
-<li><a href="https://blog.csdn.net/u012950413/article/details/80319126" target="_blank" rel="noopener">https://blog.csdn.net/u012950413/article/details/80319126</a></li>
-<li><a href="https://blog.csdn.net/aaronjny/article/details/79330727" target="_blank" rel="noopener">https://blog.csdn.net/aaronjny/article/details/79330727</a></li>
-</ul>
+<p>迭代器（iterator）有时又称游标（cursor）是程式设计的软件设计模式，可在容器物件（container，例如链表或阵列）上遍访的介面，设计人员无需关心容器物件的内存分配的实现细节。</p>
 </blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nvidia-driver nvidia-smi</span><br><span class="line">nvidia-smi <span class="comment">#有显卡信息说明驱动安装完成</span></span><br></pre></td></tr></table></figure>
-<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
-<p>目前就想到这么多的问题，如果之后再遇到的话再慢慢填坑（其实就是懒 -.-）</p>
+<p>简单来说，迭代器(iterator)是一中检查容器内元素并遍历元素的数据类型。<br />
+那么我们需要用迭代器干什么呢？ 很简单，遍历。</p>
+<h2 id="vector引用iterator实例"><a class="markdownIt-Anchor" href="#vector引用iterator实例"></a> vector引用iterator实例</h2>
+<h3 id="遍历"><a class="markdownIt-Anchor" href="#遍历"></a> 遍历</h3>
+<p>迭代器可通过自增操作来访问迭代器所指向的元素，可以类比一下C语言中的指针。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span> (it = obj.<span class="built_in">begin</span>(); it != obj.<span class="built_in">end</span>(); it++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; *it &lt;&lt; <span class="string">", "</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>,</span><br></pre></td></tr></table></figure>
+<h3 id="查找"><a class="markdownIt-Anchor" href="#查找"></a> 查找</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator it; <span class="comment">//定义迭代器</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; obj;</span><br><span class="line"><span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; ++i)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; temp;</span><br><span class="line">    obj.push_back(temp);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; obj[i] &lt;&lt; <span class="string">","</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">it = <span class="built_in">find</span>(obj.<span class="built_in">begin</span>(), obj.<span class="built_in">end</span>(), <span class="number">3</span>); <span class="comment">//查找目标为数字3</span></span><br><span class="line"><span class="keyword">if</span> (it == obj.<span class="built_in">end</span>())</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"NO"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">if</span> (it != obj.<span class="built_in">end</span>())</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"YES"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br></pre></td></tr></table></figure>
+<p>测试与返回结果如下所示：</p>
+<figure class="highlight cmd"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></span><br><span class="line"><span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,</span><br><span class="line">YES</span><br></pre></td></tr></table></figure>
+<h1 id="参考文献"><a class="markdownIt-Anchor" href="#参考文献"></a> 参考文献</h1>
+<ul>
+<li><a href="https://www.runoob.com/w3cnote/cpp-vector-container-analysis.html" target="_blank" rel="noopener">C++ vector 容器浅析</a></li>
+<li><a href="https://blog.csdn.net/duan19920101/article/details/50617190" target="_blank" rel="noopener">C++ 中vector的使用方法</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E8%BF%AD%E4%BB%A3%E5%99%A8" target="_blank" rel="noopener">迭代器</a></li>
+<li><a href="https://blog.csdn.net/zhanh1218/article/details/33340959" target="_blank" rel="noopener">C/C++迭代器使用详解</a></li>
+<li><a href="https://www.kancloud.cn/wangshubo1989/vector/101102" target="_blank" rel="noopener">实战c++中的vector系列</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>environment</category>
+        <category>program</category>
+        <category>c</category>
       </categories>
       <tags>
-        <tag>environment</tag>
+        <tag>program</tag>
+        <tag>c</tag>
       </tags>
   </entry>
   <entry>
@@ -1313,6 +1334,145 @@ Y_R &amp;= (\lambda(X_P - X_R)-Y_P) \mod P\\
         <tag>writeup</tag>
         <tag>ctf</tag>
         <tag>reverse</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>配置环境问题集</title>
+    <url>/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/</url>
+    <content><![CDATA[<h1 id="ubuntu"><a class="markdownIt-Anchor" href="#ubuntu"></a> Ubuntu</h1>
+<h2 id="ubuntu-1604出现problem-executing-scripts-aptupdatepost-invoke-success-if-usrbintest-w-varcacheapp-info-a-e-usrbinappstreamcli-then-appstreamcli-refresh-devnull-fi"><a class="markdownIt-Anchor" href="#ubuntu-1604出现problem-executing-scripts-aptupdatepost-invoke-success-if-usrbintest-w-varcacheapp-info-a-e-usrbinappstreamcli-then-appstreamcli-refresh-devnull-fi"></a> Ubuntu 16.04出现：Problem executing scripts APT::Update::Post-Invoke-Success ‘if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/appstreamcli; then appstreamcli refresh &gt; /dev/null; fi’</h2>
+<a id="more"></a>
+<p>转自<a href="https://www.cnblogs.com/EasonJim/p/7343892.html" target="_blank" rel="noopener">https://www.cnblogs.com/EasonJim/p/7343892.html</a>，侵删。</p>
+<blockquote>
+<p>错误</p>
+</blockquote>
+<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">Reading package lists... Done</span><br><span class="line"><span class="keyword">E</span>: Problem executing scripts APT::<span class="keyword">Update</span>::<span class="keyword">Post</span>-Invoke-Success</span><br><span class="line">'<span class="keyword">if</span> /usr/bin/<span class="keyword">test</span> -w /<span class="keyword">var</span>/cache/<span class="keyword">app</span>-info -a -<span class="keyword">e</span> /usr/bin/appstreamcli;</span><br><span class="line"> then appstreamcli refresh &gt; /dev/null;</span><br><span class="line"> fi'</span><br><span class="line"><span class="keyword">E</span>: Sub-process returned <span class="keyword">an</span> <span class="keyword">error</span> code</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在运行sudo apt-get update时出现如上信息，解决方法如下：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pkill -KILL appstreamcli</span><br><span class="line">wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+files/appstream_0.9.4-1ubuntu1_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br><span class="line">sudo dpkg -i /tmp/appstream_0.9.4-1ubuntu1_amd64.deb /tmp/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br></pre></td></tr></table></figure>
+<p>执行完上述命令之后再次运行sudo apt-get update就不会再出现上面的错误。</p>
+<hr />
+<h2 id="appstream-cache-update-completed-but-some-metadata-was-ignored-due-to-errors"><a class="markdownIt-Anchor" href="#appstream-cache-update-completed-but-some-metadata-was-ignored-due-to-errors"></a> AppStream cache update completed, but some metadata was ignored due to errors.</h2>
+<p>转自<a href="https://blog.csdn.net/tang05709/article/details/53609234" target="_blank" rel="noopener">https://blog.csdn.net/tang05709/article/details/53609234</a>，侵删。</p>
+<blockquote>
+<p>错误</p>
+</blockquote>
+<p>更新Ubuntu时出现AppStream cache update completed, but some metadata was ignored due to errors.</p>
+<blockquote>
+<p>解决方法</p>
+</blockquote>
+<p><code>sudo rm /var/lib/dpkg/lock</code></p>
+<h2 id="开机时出现host-smbus-controller-not-enabled"><a class="markdownIt-Anchor" href="#开机时出现host-smbus-controller-not-enabled"></a> 开机时出现Host SMBus controller not enabled</h2>
+<blockquote>
+<p>提示</p>
+</blockquote>
+<p><code>Host SMBus controller not enabled</code></p>
+<blockquote>
+<p>解决办法</p>
+</blockquote>
+<p>网上试了一些办法，在系统中禁止某些启动项是可以的。</p>
+<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># lsmod | grep i2c_piix4 (有输出的话进行以下步骤)</span></span><br><span class="line"><span class="meta"># vi  /etc/modprobe.d/blacklist.conf</span></span><br><span class="line">blacklist i2c_piix4</span><br><span class="line"><span class="meta"># reboot</span></span><br></pre></td></tr></table></figure>
+<p>以上做完之后应该就不会再出现了。</p>
+<hr />
+]]></content>
+      <categories>
+        <category>environment</category>
+      </categories>
+      <tags>
+        <tag>environment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>win10&amp;deepin双系统搭建</title>
+    <url>/environment/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<blockquote>
+<p>记录一下双系统搭建中出现的问题</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="win10磁盘分区"><a class="markdownIt-Anchor" href="#win10磁盘分区"></a> Win10磁盘分区</h1>
+<p>我的电脑是128G SSD +1T 机械硬盘的组合，最初我试过将系统搭建在机械硬盘上，但是效果并不好（开机速度实在是太慢了），本次决定将系统搭建在两块硬盘上，详细的分区如下图（其实应该显示未分配空间，但是已经安装完了嘛……我也没法倒回去）：</p>
+<p><img data-src="partition.png" alt="分区" /></p>
+<blockquote>
+<p><strong>分区之前切记备份数据！切记！</strong></p>
+</blockquote>
+<p>具体的分区事项百度一下就有，我就不多说了。下面说一点会出现的问题：</p>
+<h2 id="c盘分区"><a class="markdownIt-Anchor" href="#c盘分区"></a> C盘分区</h2>
+<p>在分区的时候，可能C盘会遇到一点点的小麻烦——发现明明剩余空间还很大，为什么分区的时候分不出那么多空间来呢？针对这个问题，我们有以下解决办法：</p>
+<ol>
+<li>查看 此电脑 -&gt; 属性 -&gt; 系统保护 -&gt; 关闭C盘保护。</li>
+<li>因为C盘是系统盘，所以我们采用第三方的分区软件（例如分区助手）进行磁盘分区，由于我的Win10版本是1803，比较新，所以采用制作启动光盘的方式，制作微PE系统引导后再进行C盘分区（引导启动下面会提到）<br />
+<img data-src="PA_Green.png" alt="第三方分区" /></li>
+</ol>
+<h2 id="引导启动"><a class="markdownIt-Anchor" href="#引导启动"></a> 引导启动</h2>
+<p>不同牌子的电脑有不同的进入BIOS的方法，针对Win10系统，我们也有比较温和的方法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: 设置</span><br><span class="line">e&#x3D;&gt;end: UEFI固件设置</span><br><span class="line">op1&#x3D;&gt;operation: 更新和安全</span><br><span class="line">op2&#x3D;&gt;operation: 恢复</span><br><span class="line">op3&#x3D;&gt;operation: 高级启动</span><br><span class="line">op4&#x3D;&gt;operation: 疑难解答</span><br><span class="line"></span><br><span class="line">st-&gt;op1(right)-&gt;op2(right)-&gt;op3(right)-&gt;op4(right)-&gt;e(right)</span><br></pre></td></tr></table></figure>
+<p>这样我们就可以安全地进入BIOS了，记得要关闭电源设置里的快速启动和BIOS的某个选项（绝对不是我忘了，绝对不是！）。</p>
+<h1 id="制作启动盘并安装"><a class="markdownIt-Anchor" href="#制作启动盘并安装"></a> 制作启动盘并安装</h1>
+<h2 id="制作启动盘"><a class="markdownIt-Anchor" href="#制作启动盘"></a> 制作启动盘</h2>
+<p>因为deepin官方给了制作启动盘的工具，只要有一个还算大的U盘和deepin系统镜像就行了，如果不想用官方的启动盘制作器，也可以用<a href="https://dev.tencent.com/u/jygzyc/p/blog_photos/git/raw/master/downloads/rufus-3.1.exe" target="_blank" rel="noopener">Rufus</a>。</p>
+<h2 id="安装系统"><a class="markdownIt-Anchor" href="#安装系统"></a> 安装系统</h2>
+<p>按上面说的将优先启动项换为U盘，即可开始安装，至于分区嘛，因为我是为了加快速度的，所以就把根目录装在SSD，其余的分到机械硬盘上，具体分区的样子可以看上面那张图，凡是没有盘符有没有特殊标识的都是deepin的分区，之后谁有需要我再把详细图放上来吧。</p>
+<h1 id="显卡驱动nvidia"><a class="markdownIt-Anchor" href="#显卡驱动nvidia"></a> <strong>显卡驱动（Nvidia）</strong></h1>
+<blockquote>
+<p>这里是最麻烦，也是最容易出问题的部分，我在这里参照了好多链接，最后才有了解决办法。<br />
+参考链接(其他的记不住了)：</p>
+<ul>
+<li><a href="https://www.cnblogs.com/necp-zwl/p/7024074.html" target="_blank" rel="noopener">https://www.cnblogs.com/necp-zwl/p/7024074.html</a></li>
+</ul>
+</blockquote>
+<h2 id="卡在logo界面"><a class="markdownIt-Anchor" href="#卡在logo界面"></a> 卡在logo界面</h2>
+<p>这里我们<code>ctrl+alt+F3</code>进入文本模式，然后禁用开源的驱动：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/modprobe.d/blacklist.deepin.conf</span><br><span class="line"><span class="comment"># 文末添加如下字段</span></span><br><span class="line">blacklist vga16fb</span><br><span class="line">blacklist nouveau</span><br><span class="line">blacklist rivafb</span><br><span class="line">blacklist rivatv</span><br><span class="line">blacklist nvidiafb</span><br><span class="line"><span class="comment"># :wq保存退出</span></span><br><span class="line">sudo upadte-initramfs -u <span class="comment">#没有这条命令的话就安装update-initramfs</span></span><br><span class="line">lsmod | grep nouveau <span class="comment">#无回显说明成功，有回显也不要慌，继续走</span></span><br></pre></td></tr></table></figure>
+<p>这时我们再<code>ctrl+alt+F1</code>回到图形界面（不行的话就重启），应该是可以正常登陆了。</p>
+<h2 id="安装nvidia驱动"><a class="markdownIt-Anchor" href="#安装nvidia驱动"></a> 安装Nvidia驱动</h2>
+<p>深度系统自己有驱动管理器，选择闭源的那个安装，如果成功则说明你很幸运，要是安装失败了，我们走接下来的流程：</p>
+<blockquote>
+<p>参考链接：</p>
+<ul>
+<li><a href="http://blog.51cto.com/lidongni/2105254" target="_blank" rel="noopener">http://blog.51cto.com/lidongni/2105254</a></li>
+<li><a href="https://blog.csdn.net/u012950413/article/details/80319126" target="_blank" rel="noopener">https://blog.csdn.net/u012950413/article/details/80319126</a></li>
+<li><a href="https://blog.csdn.net/aaronjny/article/details/79330727" target="_blank" rel="noopener">https://blog.csdn.net/aaronjny/article/details/79330727</a></li>
+</ul>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nvidia-driver nvidia-smi</span><br><span class="line">nvidia-smi <span class="comment">#有显卡信息说明驱动安装完成</span></span><br></pre></td></tr></table></figure>
+<h1 id="总结"><a class="markdownIt-Anchor" href="#总结"></a> 总结</h1>
+<p>目前就想到这么多的问题，如果之后再遇到的话再慢慢填坑（其实就是懒 -.-）</p>
+]]></content>
+      <categories>
+        <category>environment</category>
+      </categories>
+      <tags>
+        <tag>environment</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>十一月</title>
+    <url>/article/%E5%8D%81%E4%B8%80%E6%9C%88/</url>
+    <content><![CDATA[<blockquote>
+<p>二十八日随笔</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>最后一缕红光即将消逝<br />
+抬头，又是一片金色<br />
+柔和的晚霞拥抱着她<br />
+拾起一片扇叶，轻轻触摸<br />
+时光将纹路刻在叶上<br />
+又过去了一年，辛苦你了<br />
+捧起又轻放<br />
+轻浮水面，缓缓而漂，不知何方<br />
+回过神来，早已置身怀中<br />
+又是温暖的感觉<br />
+“回家吧。”</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>article</category>
+      </categories>
+      <tags>
+        <tag>life</tag>
+        <tag>article</tag>
       </tags>
   </entry>
   <entry>
@@ -1421,82 +1581,6 @@ Y_R &amp;= (\lambda(X_P - X_R)-Y_P) \mod P\\
       </categories>
       <tags>
         <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>配置环境问题集</title>
-    <url>/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/</url>
-    <content><![CDATA[<h1 id="ubuntu"><a class="markdownIt-Anchor" href="#ubuntu"></a> Ubuntu</h1>
-<h2 id="ubuntu-1604出现problem-executing-scripts-aptupdatepost-invoke-success-if-usrbintest-w-varcacheapp-info-a-e-usrbinappstreamcli-then-appstreamcli-refresh-devnull-fi"><a class="markdownIt-Anchor" href="#ubuntu-1604出现problem-executing-scripts-aptupdatepost-invoke-success-if-usrbintest-w-varcacheapp-info-a-e-usrbinappstreamcli-then-appstreamcli-refresh-devnull-fi"></a> Ubuntu 16.04出现：Problem executing scripts APT::Update::Post-Invoke-Success ‘if /usr/bin/test -w /var/cache/app-info -a -e /usr/bin/appstreamcli; then appstreamcli refresh &gt; /dev/null; fi’</h2>
-<a id="more"></a>
-<p>转自<a href="https://www.cnblogs.com/EasonJim/p/7343892.html" target="_blank" rel="noopener">https://www.cnblogs.com/EasonJim/p/7343892.html</a>，侵删。</p>
-<blockquote>
-<p>错误</p>
-</blockquote>
-<figure class="highlight stata"><table><tr><td class="code"><pre><span class="line">Reading package lists... Done</span><br><span class="line"><span class="keyword">E</span>: Problem executing scripts APT::<span class="keyword">Update</span>::<span class="keyword">Post</span>-Invoke-Success</span><br><span class="line">'<span class="keyword">if</span> /usr/bin/<span class="keyword">test</span> -w /<span class="keyword">var</span>/cache/<span class="keyword">app</span>-info -a -<span class="keyword">e</span> /usr/bin/appstreamcli;</span><br><span class="line"> then appstreamcli refresh &gt; /dev/null;</span><br><span class="line"> fi'</span><br><span class="line"><span class="keyword">E</span>: Sub-process returned <span class="keyword">an</span> <span class="keyword">error</span> code</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在运行sudo apt-get update时出现如上信息，解决方法如下：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sudo pkill -KILL appstreamcli</span><br><span class="line">wget -P /tmp https://launchpad.net/ubuntu/+archive/primary/+files/appstream_0.9.4-1ubuntu1_amd64.deb https://launchpad.net/ubuntu/+archive/primary/+files/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br><span class="line">sudo dpkg -i /tmp/appstream_0.9.4-1ubuntu1_amd64.deb /tmp/libappstream3_0.9.4-1ubuntu1_amd64.deb</span><br></pre></td></tr></table></figure>
-<p>执行完上述命令之后再次运行sudo apt-get update就不会再出现上面的错误。</p>
-<hr />
-<h2 id="appstream-cache-update-completed-but-some-metadata-was-ignored-due-to-errors"><a class="markdownIt-Anchor" href="#appstream-cache-update-completed-but-some-metadata-was-ignored-due-to-errors"></a> AppStream cache update completed, but some metadata was ignored due to errors.</h2>
-<p>转自<a href="https://blog.csdn.net/tang05709/article/details/53609234" target="_blank" rel="noopener">https://blog.csdn.net/tang05709/article/details/53609234</a>，侵删。</p>
-<blockquote>
-<p>错误</p>
-</blockquote>
-<p>更新Ubuntu时出现AppStream cache update completed, but some metadata was ignored due to errors.</p>
-<blockquote>
-<p>解决方法</p>
-</blockquote>
-<p><code>sudo rm /var/lib/dpkg/lock</code></p>
-<h2 id="开机时出现host-smbus-controller-not-enabled"><a class="markdownIt-Anchor" href="#开机时出现host-smbus-controller-not-enabled"></a> 开机时出现Host SMBus controller not enabled</h2>
-<blockquote>
-<p>提示</p>
-</blockquote>
-<p><code>Host SMBus controller not enabled</code></p>
-<blockquote>
-<p>解决办法</p>
-</blockquote>
-<p>网上试了一些办法，在系统中禁止某些启动项是可以的。</p>
-<figure class="highlight vala"><table><tr><td class="code"><pre><span class="line"><span class="meta"># lsmod | grep i2c_piix4 (有输出的话进行以下步骤)</span></span><br><span class="line"><span class="meta"># vi  /etc/modprobe.d/blacklist.conf</span></span><br><span class="line">blacklist i2c_piix4</span><br><span class="line"><span class="meta"># reboot</span></span><br></pre></td></tr></table></figure>
-<p>以上做完之后应该就不会再出现了。</p>
-<hr />
-]]></content>
-      <categories>
-        <category>environment</category>
-      </categories>
-      <tags>
-        <tag>environment</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>十一月</title>
-    <url>/article/%E5%8D%81%E4%B8%80%E6%9C%88/</url>
-    <content><![CDATA[<blockquote>
-<p>二十八日随笔</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>最后一缕红光即将消逝<br />
-抬头，又是一片金色<br />
-柔和的晚霞拥抱着她<br />
-拾起一片扇叶，轻轻触摸<br />
-时光将纹路刻在叶上<br />
-又过去了一年，辛苦你了<br />
-捧起又轻放<br />
-轻浮水面，缓缓而漂，不知何方<br />
-回过神来，早已置身怀中<br />
-又是温暖的感觉<br />
-“回家吧。”</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>article</category>
-      </categories>
-      <tags>
-        <tag>life</tag>
-        <tag>article</tag>
       </tags>
   </entry>
 </search>

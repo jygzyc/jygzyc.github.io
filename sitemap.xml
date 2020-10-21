@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jygzyc.github.io/Android/Native/Android-Native-and-security-introduction-part-1/</loc>
+    
+    <lastmod>2020-10-21T16:44:14.751Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/KnowledgePoints/KnowledgePoints/</loc>
+    
+    <lastmod>2020-10-21T15:55:24.895Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/hexo/hexo-next-photos/</loc>
+    
+    <lastmod>2020-10-21T15:52:15.790Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2020-08-25T14:28:39.260Z</lastmod>
@@ -12,13 +33,6 @@
     <loc>https://jygzyc.github.io/about/index.html</loc>
     
     <lastmod>2020-07-10T13:50:10.446Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/hexo/hexo-next-photos/</loc>
-    
-    <lastmod>2020-07-08T06:07:54.850Z</lastmod>
     
   </url>
   
@@ -51,14 +65,14 @@
   </url>
   
   <url>
-    <loc>https://jygzyc.github.io/hexo/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/</loc>
+    <loc>https://jygzyc.github.io/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/</loc>
     
     <lastmod>2020-06-22T17:58:54.459Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jygzyc.github.io/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/</loc>
+    <loc>https://jygzyc.github.io/hexo/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/</loc>
     
     <lastmod>2020-06-22T17:58:54.459Z</lastmod>
     
@@ -149,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://jygzyc.github.io/program/c/C-String%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</loc>
+    <loc>https://jygzyc.github.io/UEFI/HelloUEFI/</loc>
     
     <lastmod>2020-06-22T17:58:54.412Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jygzyc.github.io/UEFI/HelloUEFI/</loc>
+    <loc>https://jygzyc.github.io/program/c/C-String%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</loc>
     
     <lastmod>2020-06-22T17:58:54.412Z</lastmod>
     
