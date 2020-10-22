@@ -98,7 +98,11 @@
 <p>创建软链接</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">ln -s  [源文件或目录]  [目标文件或目录]</span><br></pre></td></tr></table></figure>
 <h1 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> Windows</h1>
-<p>more…</p>
+<h2 id="脚本控制virtualbox虚拟机开启休眠"><a class="markdownIt-Anchor" href="#脚本控制virtualbox虚拟机开启休眠"></a> 脚本控制virtualBox虚拟机开启休眠</h2>
+<p>开启</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span></span><br><span class="line"><span class="built_in">cd</span> D:\software\Oracle\VirtualBox\</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function">.\<span class="title">VBoxmanage</span> <span class="title">startvm</span> <span class="title">ubuntu</span> --<span class="title">type</span> <span class="title">headless</span></span></span><br></pre></td></tr></table></figure>
+<p>休眠</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span></span><br><span class="line"><span class="built_in">cd</span> D:\software\Oracle\VirtualBox\</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function">.\<span class="title">VBoxmanage</span> <span class="title">controlvm</span> <span class="title">ubuntu</span> <span class="title">savestate</span></span></span><br></pre></td></tr></table></figure>
 <h1 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h1>
 <p>more…</p>
 ]]></content>

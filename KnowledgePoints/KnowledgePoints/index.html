@@ -30,7 +30,7 @@
 <meta property="og:description" content="随记知识点">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-21T15:51:02.000Z">
-<meta property="article:modified_time" content="2020-10-21T15:55:24.895Z">
+<meta property="article:modified_time" content="2020-10-22T18:19:37.381Z">
 <meta property="article:author" content="jygzyc">
 <meta property="article:tag" content="KnowledgePoints">
 <meta name="twitter:card" content="summary">
@@ -234,10 +234,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-10-21 23:51:02 / Modified: 23:55:24" itemprop="dateCreated datePublished" datetime="2020-10-21T23:51:02+08:00">2020-10-21</time>
+              <time title="Created: 2020-10-21 23:51:02" itemprop="dateCreated datePublished" datetime="2020-10-21T23:51:02+08:00">2020-10-21</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-10-23 02:19:37" itemprop="dateModified" datetime="2020-10-23T02:19:37+08:00">2020-10-23</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -291,7 +297,11 @@
 <p>创建软链接</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s  [源文件或目录]  [目标文件或目录]</span><br></pre></td></tr></table></figure>
 <h1 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> Windows</h1>
-<p>more…</p>
+<h2 id="脚本控制virtualbox虚拟机开启休眠"><a class="markdownIt-Anchor" href="#脚本控制virtualbox虚拟机开启休眠"></a> 脚本控制virtualBox虚拟机开启休眠</h2>
+<p>开启</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span></span><br><span class="line"><span class="built_in">cd</span> D:\software\Oracle\VirtualBox\</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function">.\<span class="title">VBoxmanage</span> <span class="title">startvm</span> <span class="title">ubuntu</span> --<span class="title">type</span> <span class="title">headless</span></span></span><br></pre></td></tr></table></figure>
+<p>休眠</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span></span><br><span class="line"><span class="built_in">cd</span> D:\software\Oracle\VirtualBox\</span><br><span class="line"><span class="function">D:</span></span><br><span class="line"><span class="function">.\<span class="title">VBoxmanage</span> <span class="title">controlvm</span> <span class="title">ubuntu</span> <span class="title">savestate</span></span></span><br></pre></td></tr></table></figure>
 <h1 id="others"><a class="markdownIt-Anchor" href="#others"></a> Others</h1>
 <p>more…</p>
 
@@ -395,7 +405,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#android"><span class="nav-text"> Android</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-text"> Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux软链接的创建-删除和更新"><span class="nav-text"> linux软链接的创建、删除和更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows"><span class="nav-text"> Windows</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others"><span class="nav-text"> Others</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#android"><span class="nav-text"> Android</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux"><span class="nav-text"> Linux</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux软链接的创建-删除和更新"><span class="nav-text"> linux软链接的创建、删除和更新</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#windows"><span class="nav-text"> Windows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本控制virtualbox虚拟机开启休眠"><span class="nav-text"> 脚本控制virtualBox虚拟机开启休眠</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#others"><span class="nav-text"> Others</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
