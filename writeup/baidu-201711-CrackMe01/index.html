@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe01/chText.jpg">
 <meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe01/flag.jpg">
 <meta property="article:published_time" content="2018-11-12T03:44:51.000Z">
-<meta property="article:modified_time" content="2020-06-22T17:58:54.433Z">
+<meta property="article:modified_time" content="2018-11-12T03:44:51.000Z">
 <meta property="article:author" content="jygzyc">
 <meta property="article:tag" content="writeup">
 <meta property="article:tag" content="ctf">
@@ -58,7 +58,7 @@
     lang   : 'en'
   };
 </script>
-
+<link rel="stylesheet" type="text/css" href="/css/injector.css" />
   <title>baidu_201711_CrackMe01 | Ecool</title>
   
 
@@ -248,13 +248,6 @@
 
               <time title="Created: 2018-11-12 11:44:51" itemprop="dateCreated datePublished" datetime="2018-11-12T11:44:51+08:00">2018-11-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 01:58:54" itemprop="dateModified" datetime="2020-06-23T01:58:54+08:00">2020-06-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -326,10 +319,10 @@
 <p>5.由伪码可以看见判断，chText和v6逐字节做异或，得出flag，其中(v6 &amp; 0xF00)<mark>1024 &amp;&amp; (v6 &amp; 0xF0)</mark>-80 &amp;&amp; (v6 &amp; 6)==6，我们取v6 &lt; 0xff做一下。chText的值进入IDA可以查看。</p>
 <img data-src="chText.jpg" width=20% />
 <p>6.编写CPP程序</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;<span class="type">string</span>.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    unsigned int data[]=&#123;<span class="number">0x4F0</span>,  <span class="number">0x4DA</span>,  <span class="number">0x4D7</span>,  <span class="number">0x4D1</span>,  <span class="number">0x48C</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4F5</span>,  <span class="number">0x4FE</span>,  <span class="number">0x4E3</span>,  <span class="number">0x4F8</span>,  <span class="number">0x4E7</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4E3</span>,  <span class="number">0x4E9</span>,  <span class="number">0x4F0</span>,  <span class="number">0x4F3</span>,  <span class="number">0x485</span>,  <span class="number">0x480</span>,</span><br><span class="line">                        <span class="number">0x484</span>,  <span class="number">0x4F2</span>,  <span class="number">0x4F4</span>,  <span class="number">0x4F3</span>&#125;;</span><br><span class="line">    for(unsigned int i=<span class="number">0</span>;i&lt;<span class="number">0xff</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		for(unsigned int j=<span class="number">0</span>;j&lt;<span class="number">22</span>;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(<span class="string">"%c"</span>,data[j]^i);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(<span class="string">"<span class="subst">\n</span>%X<span class="subst">\n</span>"</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;<span class="type">string</span>.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    unsigned int data[]=&#123;<span class="number">0x4F0</span>,  <span class="number">0x4DA</span>,  <span class="number">0x4D7</span>,  <span class="number">0x4D1</span>,  <span class="number">0x48C</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4F5</span>,  <span class="number">0x4FE</span>,  <span class="number">0x4E3</span>,  <span class="number">0x4F8</span>,  <span class="number">0x4E7</span>,  <span class="number">0x4FF</span>,</span><br><span class="line">                        <span class="number">0x4E3</span>,  <span class="number">0x4E9</span>,  <span class="number">0x4F0</span>,  <span class="number">0x4F3</span>,  <span class="number">0x485</span>,  <span class="number">0x480</span>,</span><br><span class="line">                        <span class="number">0x484</span>,  <span class="number">0x4F2</span>,  <span class="number">0x4F4</span>,  <span class="number">0x4F3</span>&#125;;</span><br><span class="line">    for(unsigned int i=<span class="number">0</span>;i&lt;<span class="number">0xff</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">		for(unsigned int j=<span class="number">0</span>;j&lt;<span class="number">22</span>;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(<span class="string">&quot;%c&quot;</span>,data[j]^i);</span><br><span class="line">		&#125;</span><br><span class="line">		printf(<span class="string">&quot;<span class="subst">\n</span>%X<span class="subst">\n</span>&quot;</span>,i);</span><br><span class="line">    &#125;</span><br><span class="line">    return <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>7.运行得到flag</p>
 <p><img data-src="flag.jpg" alt="flag" /></p>
-<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe01_97D2BF0DBD2EC13065E7104F24CAAED9.zip" target="_blank" rel="noopener">download</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe01_97D2BF0DBD2EC13065E7104F24CAAED9.zip">download</a></p>
 
     </div>
 
@@ -446,7 +439,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -493,6 +486,10 @@
         
         
           <li>
+            <a href="/UEFI/UEFI-QandA/" title="UEFI原理与实践笔记（三）_Q&A" target="_blank">UEFI原理与实践笔记（三）_Q&A</a>
+          </li>
+        
+          <li>
             <a href="/Android/Native/Android-Native-and-security-introduction-part-1/" title="Android Native 入门（1）" target="_blank">Android Native 入门（1）</a>
           </li>
         
@@ -502,10 +499,6 @@
         
           <li>
             <a href="/UEFI/HelloUEFI/" title="UEFI原理与实践笔记-Hello UEFI" target="_blank">UEFI原理与实践笔记-Hello UEFI</a>
-          </li>
-        
-          <li>
-            <a href="/bitcoin/bitcoin-address/" title="比特币密钥和地址" target="_blank">比特币密钥和地址</a>
           </li>
         
       </ul>

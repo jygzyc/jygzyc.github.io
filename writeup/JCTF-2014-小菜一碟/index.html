@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://jygzyc.github.io/writeup/JCTF-2014-%E5%B0%8F%E8%8F%9C%E4%B8%80%E7%A2%9F/search.jpg">
 <meta property="og:image" content="https://jygzyc.github.io/writeup/JCTF-2014-%E5%B0%8F%E8%8F%9C%E4%B8%80%E7%A2%9F/code.jpg">
 <meta property="article:published_time" content="2018-11-12T13:34:13.000Z">
-<meta property="article:modified_time" content="2020-06-22T17:58:54.415Z">
+<meta property="article:modified_time" content="2018-11-12T13:34:13.000Z">
 <meta property="article:author" content="jygzyc">
 <meta property="article:tag" content="writeup">
 <meta property="article:tag" content="ctf">
@@ -53,7 +53,7 @@
     lang   : 'en'
   };
 </script>
-
+<link rel="stylesheet" type="text/css" href="/css/injector.css" />
   <title>JCTF_2014_小菜一碟 | Ecool</title>
   
 
@@ -243,13 +243,6 @@
 
               <time title="Created: 2018-11-12 21:34:13" itemprop="dateCreated datePublished" datetime="2018-11-12T21:34:13+08:00">2018-11-12</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 01:58:54" itemprop="dateModified" datetime="2020-06-23T01:58:54+08:00">2020-06-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -294,7 +287,7 @@
 
       
         <ol>
-<li>用IDA打开源码，可以看见源码是安卓程序，我们使用jeb对源码进行分析，<a id="more"></a>关于jeb的安装<a href="https://www.52pojie.cn/thread-722648-1-1.html" target="_blank" rel="noopener">点击这里</a>,安装过程所需的jdk1.8_121可以在这里<a href="https://www.filepuma.com/download/java_development_kit_64bit_8.0.1210.13-13999/" target="_blank" rel="noopener">下载</a>。</li>
+<li>用IDA打开源码，可以看见源码是安卓程序，我们使用jeb对源码进行分析，<a id="more"></a>关于jeb的安装<a target="_blank" rel="noopener" href="https://www.52pojie.cn/thread-722648-1-1.html">点击这里</a>,安装过程所需的jdk1.8_121可以在这里<a target="_blank" rel="noopener" href="https://www.filepuma.com/download/java_development_kit_64bit_8.0.1210.13-13999/">下载</a>。</li>
 </ol>
 <img data-src="preview.jpg" width=40% />
 <blockquote>
@@ -309,9 +302,9 @@
 </ol>
 <img data-src="code.jpg" width=40% />
 <ol start="4">
-<li>由上所述，逆操作，base64解码“NzU2ZDJmYzg0ZDA3YTM1NmM4ZjY4ZjcxZmU3NmUxODk=”得到“756d2fc84d07a356c8f68f71fe76e189”，再进行<a href="http://www.chamd5.org/" target="_blank" rel="noopener">MD5解码</a>，得到“ }321nimda{galflj”，逆置后得到flag{admin123}。</li>
+<li>由上所述，逆操作，base64解码“NzU2ZDJmYzg0ZDA3YTM1NmM4ZjY4ZjcxZmU3NmUxODk=”得到“756d2fc84d07a356c8f68f71fe76e189”，再进行<a target="_blank" rel="noopener" href="http://www.chamd5.org/">MD5解码</a>，得到“ }321nimda{galflj”，逆置后得到flag{admin123}。</li>
 </ol>
-<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/re100" target="_blank" rel="noopener">download</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jygzyc/blog_backup/raw/master/downloads/re100">download</a></p>
 
     </div>
 
@@ -430,7 +423,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -477,6 +470,10 @@
         
         
           <li>
+            <a href="/UEFI/UEFI-QandA/" title="UEFI原理与实践笔记（三）_Q&A" target="_blank">UEFI原理与实践笔记（三）_Q&A</a>
+          </li>
+        
+          <li>
             <a href="/Android/Native/Android-Native-and-security-introduction-part-1/" title="Android Native 入门（1）" target="_blank">Android Native 入门（1）</a>
           </li>
         
@@ -486,10 +483,6 @@
         
           <li>
             <a href="/UEFI/HelloUEFI/" title="UEFI原理与实践笔记-Hello UEFI" target="_blank">UEFI原理与实践笔记-Hello UEFI</a>
-          </li>
-        
-          <li>
-            <a href="/bitcoin/bitcoin-address/" title="比特币密钥和地址" target="_blank">比特币密钥和地址</a>
           </li>
         
       </ul>

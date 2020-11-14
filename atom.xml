@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://jygzyc.github.io/"/>
-  <updated>2020-10-21T16:47:12.250Z</updated>
+  <updated>2020-11-14T17:18:36.000Z</updated>
   <id>https://jygzyc.github.io/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>UEFI原理与实践笔记（三）_Q&amp;A</title>
+    <link href="https://jygzyc.github.io/UEFI/UEFI-QandA/"/>
+    <id>https://jygzyc.github.io/UEFI/UEFI-QandA/</id>
+    <published>2020-11-14T17:18:36.000Z</published>
+    <updated>2020-11-14T17:18:36.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;UEFI原理与实践笔记（三）-Q&amp;amp;A&lt;br /&gt;
+记录一下搭建环境和Hello World中出现的问题&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="UEFI" scheme="https://jygzyc.github.io/categories/UEFI/"/>
+    
+    
+      <category term="UEFI" scheme="https://jygzyc.github.io/tags/UEFI/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Android Native 入门（1）</title>
     <link href="https://jygzyc.github.io/Android/Native/Android-Native-and-security-introduction-part-1/"/>
     <id>https://jygzyc.github.io/Android/Native/Android-Native-and-security-introduction-part-1/</id>
     <published>2020-10-21T16:44:14.000Z</published>
-    <updated>2020-10-21T16:47:12.250Z</updated>
+    <updated>2020-10-21T16:44:14.000Z</updated>
     
     <summary type="html">
     
@@ -46,7 +70,7 @@
     <link href="https://jygzyc.github.io/KnowledgePoints/KnowledgePoints/"/>
     <id>https://jygzyc.github.io/KnowledgePoints/KnowledgePoints/</id>
     <published>2020-10-21T15:51:02.000Z</published>
-    <updated>2020-10-22T18:19:37.381Z</updated>
+    <updated>2020-10-21T15:51:02.000Z</updated>
     
     <summary type="html">
     
@@ -69,7 +93,7 @@
     <link href="https://jygzyc.github.io/UEFI/HelloUEFI/"/>
     <id>https://jygzyc.github.io/UEFI/HelloUEFI/</id>
     <published>2020-05-07T12:14:55.000Z</published>
-    <updated>2020-06-22T17:58:54.412Z</updated>
+    <updated>2020-05-07T12:14:55.000Z</updated>
     
     <summary type="html">
     
@@ -93,7 +117,7 @@
     <link href="https://jygzyc.github.io/bitcoin/bitcoin-address/"/>
     <id>https://jygzyc.github.io/bitcoin/bitcoin-address/</id>
     <published>2020-02-17T08:45:24.000Z</published>
-    <updated>2020-06-22T17:58:54.446Z</updated>
+    <updated>2020-02-17T08:45:24.000Z</updated>
     
     <summary type="html">
     
@@ -118,7 +142,7 @@
     <link href="https://jygzyc.github.io/program/c/c-Vector%E8%A7%A3%E6%9E%90/"/>
     <id>https://jygzyc.github.io/program/c/c-Vector%E8%A7%A3%E6%9E%90/</id>
     <published>2020-02-12T14:32:59.000Z</published>
-    <updated>2020-06-22T17:58:54.448Z</updated>
+    <updated>2020-02-12T14:32:59.000Z</updated>
     
     <summary type="html">
     
@@ -145,7 +169,7 @@
     <link href="https://jygzyc.github.io/program/c/C-String%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/"/>
     <id>https://jygzyc.github.io/program/c/C-String%E5%87%BD%E6%95%B0%E7%94%A8%E6%B3%95/</id>
     <published>2020-02-09T14:18:18.000Z</published>
-    <updated>2020-06-22T17:58:54.412Z</updated>
+    <updated>2020-02-09T14:18:18.000Z</updated>
     
     <summary type="html">
     
@@ -169,10 +193,10 @@
   
   <entry>
     <title>NexT主题插件hexo-next-photos</title>
-    <link href="https://jygzyc.github.io/hexo/hexo-next-photos/"/>
-    <id>https://jygzyc.github.io/hexo/hexo-next-photos/</id>
+    <link href="https://jygzyc.github.io/hexo-next-photos"/>
+    <id>https://jygzyc.github.io/hexo-next-photos</id>
     <published>2020-02-05T06:46:00.000Z</published>
-    <updated>2020-10-21T15:52:15.790Z</updated>
+    <updated>2020-02-05T06:46:00.000Z</updated>
     
     <summary type="html">
     
@@ -195,7 +219,7 @@
     <link href="https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>https://jygzyc.github.io/UEFI/UEFI%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E8%B7%B5%E7%AC%94%E8%AE%B0-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</id>
     <published>2020-02-01T06:16:43.000Z</published>
-    <updated>2020-08-25T14:28:39.260Z</updated>
+    <updated>2020-02-01T06:16:43.000Z</updated>
     
     <summary type="html">
     
@@ -219,7 +243,7 @@
     <link href="https://jygzyc.github.io/hexo/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"/>
     <id>https://jygzyc.github.io/hexo/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/</id>
     <published>2020-01-30T05:28:49.000Z</published>
-    <updated>2020-06-22T17:58:54.459Z</updated>
+    <updated>2020-01-30T05:28:49.000Z</updated>
     
     <summary type="html">
     
@@ -242,7 +266,7 @@
     <link href="https://jygzyc.github.io/writeup/reverse-write-up/"/>
     <id>https://jygzyc.github.io/writeup/reverse-write-up/</id>
     <published>2019-03-24T15:39:32.000Z</published>
-    <updated>2020-06-22T17:58:54.449Z</updated>
+    <updated>2019-03-24T15:39:32.000Z</updated>
     
     <summary type="html">
     
@@ -267,7 +291,7 @@
     <link href="https://jygzyc.github.io/Windows-Exploit/Windows-Exploit-Development-Part-1-The-Basics-%E8%BD%AC%E8%BD%BD/"/>
     <id>https://jygzyc.github.io/Windows-Exploit/Windows-Exploit-Development-Part-1-The-Basics-%E8%BD%AC%E8%BD%BD/</id>
     <published>2019-03-22T07:34:52.000Z</published>
-    <updated>2020-06-22T17:58:54.419Z</updated>
+    <updated>2019-03-22T07:34:52.000Z</updated>
     
     <summary type="html">
     
@@ -290,7 +314,7 @@
     <link href="https://jygzyc.github.io/environment/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/"/>
     <id>https://jygzyc.github.io/environment/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/</id>
     <published>2019-01-03T05:59:54.000Z</published>
-    <updated>2020-06-22T17:58:54.457Z</updated>
+    <updated>2019-01-03T05:59:54.000Z</updated>
     
     <summary type="html">
     
@@ -313,7 +337,7 @@
     <link href="https://jygzyc.github.io/article/%E5%8D%81%E4%B8%80%E6%9C%88/"/>
     <id>https://jygzyc.github.io/article/%E5%8D%81%E4%B8%80%E6%9C%88/</id>
     <published>2018-11-28T06:16:22.000Z</published>
-    <updated>2020-06-22T17:58:54.458Z</updated>
+    <updated>2018-11-28T06:16:22.000Z</updated>
     
     <summary type="html">
     
@@ -336,7 +360,7 @@
     <link href="https://jygzyc.github.io/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/"/>
     <id>https://jygzyc.github.io/environment/%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98%E9%9B%86/</id>
     <published>2018-11-20T04:48:39.000Z</published>
-    <updated>2020-06-22T17:58:54.459Z</updated>
+    <updated>2018-11-20T04:48:39.000Z</updated>
     
     <summary type="html">
     
@@ -357,7 +381,7 @@
     <link href="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/"/>
     <id>https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/</id>
     <published>2018-11-13T13:38:46.000Z</published>
-    <updated>2020-06-22T17:58:54.437Z</updated>
+    <updated>2018-11-13T13:38:46.000Z</updated>
     
     <summary type="html">
     
@@ -382,7 +406,7 @@
     <link href="https://jygzyc.github.io/writeup/ISC%E8%AE%AD%E7%BB%83%E8%B5%9B_2016_phrackCTF_Classical%20CrackMe/"/>
     <id>https://jygzyc.github.io/writeup/ISC%E8%AE%AD%E7%BB%83%E8%B5%9B_2016_phrackCTF_Classical%20CrackMe/</id>
     <published>2018-11-12T14:37:49.000Z</published>
-    <updated>2020-06-22T17:58:54.413Z</updated>
+    <updated>2018-11-12T14:37:49.000Z</updated>
     
     <summary type="html">
     
@@ -407,7 +431,7 @@
     <link href="https://jygzyc.github.io/writeup/JCTF-2014-%E5%B0%8F%E8%8F%9C%E4%B8%80%E7%A2%9F/"/>
     <id>https://jygzyc.github.io/writeup/JCTF-2014-%E5%B0%8F%E8%8F%9C%E4%B8%80%E7%A2%9F/</id>
     <published>2018-11-12T13:34:13.000Z</published>
-    <updated>2020-06-22T17:58:54.415Z</updated>
+    <updated>2018-11-12T13:34:13.000Z</updated>
     
     <summary type="html">
     
@@ -432,7 +456,7 @@
     <link href="https://jygzyc.github.io/writeup/baidu-201711-CrackMe01/"/>
     <id>https://jygzyc.github.io/writeup/baidu-201711-CrackMe01/</id>
     <published>2018-11-12T03:44:51.000Z</published>
-    <updated>2020-06-22T17:58:54.433Z</updated>
+    <updated>2018-11-12T03:44:51.000Z</updated>
     
     <summary type="html">
     

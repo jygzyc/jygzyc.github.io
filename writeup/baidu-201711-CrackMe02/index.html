@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/calls.jpg">
 <meta property="og:image" content="https://jygzyc.github.io/writeup/baidu-201711-CrackMe02/AES.jpg">
 <meta property="article:published_time" content="2018-11-13T13:38:46.000Z">
-<meta property="article:modified_time" content="2020-06-22T17:58:54.437Z">
+<meta property="article:modified_time" content="2018-11-13T13:38:46.000Z">
 <meta property="article:author" content="jygzyc">
 <meta property="article:tag" content="writeup">
 <meta property="article:tag" content="ctf">
@@ -59,7 +59,7 @@
     lang   : 'en'
   };
 </script>
-
+<link rel="stylesheet" type="text/css" href="/css/injector.css" />
   <title>baidu-201711-CrackMe02 | Ecool</title>
   
 
@@ -249,13 +249,6 @@
 
               <time title="Created: 2018-11-13 21:38:46" itemprop="dateCreated datePublished" datetime="2018-11-13T21:38:46+08:00">2018-11-13</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 01:58:54" itemprop="dateModified" datetime="2020-06-23T01:58:54+08:00">2020-06-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -305,13 +298,13 @@
 </blockquote>
 <a id="more"></a>
 <ul>
-<li>先到官网上下好<a href="https://www.python.org/downloads/release/python-2715/" target="_blank" rel="noopener">python 2.7</a>的安装包，安装。</li>
-<li>用 <code>pip install pycrypto</code>安装加密模块，如果出现<code>error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27</code>，我们就去<a href="https://www.microsoft.com/en-us/download/details.aspx?id=44266" target="_blank" rel="noopener">安装</a>一下Windows对python的支持。</li>
+<li>先到官网上下好<a target="_blank" rel="noopener" href="https://www.python.org/downloads/release/python-2715/">python 2.7</a>的安装包，安装。</li>
+<li>用 <code>pip install pycrypto</code>安装加密模块，如果出现<code>error: Microsoft Visual C++ 9.0 is required (Unable to find vcvarsall.bat). Get it from http://aka.ms/vcpython27</code>，我们就去<a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/download/details.aspx?id=44266">安装</a>一下Windows对python的支持。</li>
 <li>上述都做完之后，打开<em>python</em>，输入 <code>from Crypto.Cipher import AES</code>，如果运行没有报错，就是配置成功了。</li>
 </ul>
 <h2 id="step"><a class="markdownIt-Anchor" href="#step"></a> step</h2>
 <blockquote>
-<p>做之前可以去看看<a href="https://www.ichunqiu.com/course/56677" target="_blank" rel="noopener">大表哥的整理思路的视频</a>，确实很厉害。<br />
+<p>做之前可以去看看<a target="_blank" rel="noopener" href="https://www.ichunqiu.com/course/56677">大表哥的整理思路的视频</a>，确实很厉害。<br />
 跑这道题算是我学od这么长时间以来最复杂的一个了……跑到吐血</p>
 </blockquote>
 <h3 id="找切入点"><a class="markdownIt-Anchor" href="#找切入点"></a> 找切入点</h3>
@@ -360,8 +353,8 @@
 <li>此题多解原因是如果偶数为0x30，则不进行循环，0x2f累加值也为零，对最后的正确流程没有影响。所以是可以随意附加&quot;20&quot;、“80”、“Q0”、'S0&quot;，从而产生多解。</li>
 </ul>
 <h3 id="解题脚本"><a class="markdownIt-Anchor" href="#解题脚本"></a> 解题脚本</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">key = <span class="string">'B1nGzL[4st-TeAm]'</span></span><br><span class="line">iv = <span class="string">'\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F'</span></span><br><span class="line">path = <span class="string">'27S281S182S327S287S323Q124S281S1'</span>.encode(<span class="string">'base64'</span>).strip()</span><br><span class="line">m = path + <span class="string">'\x00'</span>*<span class="number">4</span></span><br><span class="line">cryptor = AES.new(key,AES.MODE_CBC,iv)</span><br><span class="line">cryptortext = cryptor.encrypt(m)</span><br><span class="line"></span><br><span class="line"><span class="keyword">print</span> <span class="string">"==================================================="</span></span><br><span class="line"><span class="keyword">print</span> <span class="string">'cryptortext:'</span>+cryptortext.encode(<span class="string">'hex'</span>)</span><br><span class="line"><span class="keyword">print</span> <span class="string">'==================================================='</span></span><br></pre></td></tr></table></figure>
-<p>结果得到<code>flag{235cfe4e617b3656758e14ca51d981a9e5623be7424a244ae93d8a48cf9cf7f0a84649f35fdd9a47e7afef01dfc9f639}</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Cipher <span class="keyword">import</span> AES</span><br><span class="line"></span><br><span class="line">key = <span class="string">&#x27;B1nGzL[4st-TeAm]&#x27;</span></span><br><span class="line">iv = <span class="string">&#x27;\x00\x01\x02\x03\x04\x05\x06\x07\x08\x09\x0A\x0B\x0C\x0D\x0E\x0F&#x27;</span></span><br><span class="line">path = <span class="string">&#x27;27S281S182S327S287S323Q124S281S1&#x27;</span>.encode(<span class="string">&#x27;base64&#x27;</span>).strip()</span><br><span class="line">m = path + <span class="string">&#x27;\x00&#x27;</span>*<span class="number">4</span></span><br><span class="line">cryptor = AES.new(key,AES.MODE_CBC,iv)</span><br><span class="line">cryptortext = cryptor.encrypt(m)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span> <span class="string">&quot;===================================================&quot;</span></span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;cryptortext:&#x27;</span>+cryptortext.encode(<span class="string">&#x27;hex&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> <span class="string">&#x27;===================================================&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>结果得到<code>flag&#123;235cfe4e617b3656758e14ca51d981a9e5623be7424a244ae93d8a48cf9cf7f0a84649f35fdd9a47e7afef01dfc9f639&#125;</code></p>
 <h3 id="感想"><a class="markdownIt-Anchor" href="#感想"></a> 感想</h3>
 <ul>
 <li>关于AES的识别，还是直接用IDA的插件来的比较实在，不过最好是能识别出算法的特征，就像下面这个（个人瞎猜，欢迎大佬指正）：</li>
@@ -373,7 +366,7 @@
 <ul>
 <li>迷宫问题还是reverse中的热门问题……虽然很难……</li>
 </ul>
-<p><a href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe02.exe" target="_blank" rel="noopener">download</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/jygzyc/blog_backup/raw/master/downloads/CrackMe02.exe">download</a></p>
 
     </div>
 
@@ -477,7 +470,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#environment"><span class="nav-number">1.</span> <span class="nav-text"> environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step"><span class="nav-number">2.</span> <span class="nav-text"> step</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#找切入点"><span class="nav-number">2.1.</span> <span class="nav-text"> 找切入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梳理函数逻辑"><span class="nav-number">2.2.</span> <span class="nav-text"> 梳理函数逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解题脚本"><span class="nav-number">2.3.</span> <span class="nav-text"> 解题脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#感想"><span class="nav-number">2.4.</span> <span class="nav-text"> 感想</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#environment"><span class="nav-number">1.</span> <span class="nav-text"> environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#step"><span class="nav-number">2.</span> <span class="nav-text"> step</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%BE%E5%88%87%E5%85%A5%E7%82%B9"><span class="nav-number">2.1.</span> <span class="nav-text"> 找切入点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A2%B3%E7%90%86%E5%87%BD%E6%95%B0%E9%80%BB%E8%BE%91"><span class="nav-number">2.2.</span> <span class="nav-text"> 梳理函数逻辑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E8%84%9A%E6%9C%AC"><span class="nav-number">2.3.</span> <span class="nav-text"> 解题脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%84%9F%E6%83%B3"><span class="nav-number">2.4.</span> <span class="nav-text"> 感想</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,7 +486,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -540,6 +533,10 @@
         
         
           <li>
+            <a href="/UEFI/UEFI-QandA/" title="UEFI原理与实践笔记（三）_Q&A" target="_blank">UEFI原理与实践笔记（三）_Q&A</a>
+          </li>
+        
+          <li>
             <a href="/Android/Native/Android-Native-and-security-introduction-part-1/" title="Android Native 入门（1）" target="_blank">Android Native 入门（1）</a>
           </li>
         
@@ -549,10 +546,6 @@
         
           <li>
             <a href="/UEFI/HelloUEFI/" title="UEFI原理与实践笔记-Hello UEFI" target="_blank">UEFI原理与实践笔记-Hello UEFI</a>
-          </li>
-        
-          <li>
-            <a href="/bitcoin/bitcoin-address/" title="比特币密钥和地址" target="_blank">比特币密钥和地址</a>
           </li>
         
       </ul>

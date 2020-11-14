@@ -3,6 +3,7 @@
   --color: #fff;
   --moon-item-bg-color: #000;
 }
+
 @media (prefers-color-scheme: dark) {
   .moon-menu {
     --moon-cricle: #2b5278;
@@ -10,6 +11,7 @@
     --moon-item-bg-color: #182533;
   }
 }
+
 :root {
   --body-bg-color: #f5f7f9;
   --content-bg-color: #fff;
@@ -1344,7 +1346,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #63ffff;
+  background: #ffe3ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2937,15 +2939,18 @@ body {
   height: 4em;
   z-index: 999;
 }
+
 .moon-menu-button {
   width: 4em;
   height: 4em;
   cursor: pointer;
 }
+
 .moon-menu-cricle {
   fill: var(--moon-cricle, #607d8b);
   opacity: 0.9;
 }
+
 .moon-menu-border {
   stroke: var(--moon-cricle, #607d8b);
   opacity: 0.9;
@@ -2954,20 +2959,24 @@ body {
   transform: rotate(-90deg);
   transform-origin: 50% 50%;
 }
+
 .moon-menu-icon {
   font-size: 2.5em;
   line-height: 1.6em;
   color: var(--color, #fff);
   text-align: center;
 }
+
 .moon-menu-icon i,
 .moon-menu-icon svg {
   transition: all 0.15s cubic-bezier(0, 0, 0.382, 1.618);
 }
+
 .moon-menu-icon.active i,
 .moon-menu-icon.active svg {
   transform: rotate(90deg);
 }
+
 .moon-menu-text {
   color: var(--color, #fff);
   font-weight: 400;
@@ -2976,6 +2985,7 @@ body {
   font-size: 1.2em;
   display: none;
 }
+
 .moon-menu-item {
   position: absolute;
   top: 1em;
@@ -2993,3 +3003,4 @@ body {
   color: var(--color, #fff);
   cursor: pointer;
 }
+

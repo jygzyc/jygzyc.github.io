@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://jygzyc.github.io/environment/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/partition.png">
 <meta property="og:image" content="https://jygzyc.github.io/environment/win10-deepin%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%90%AD%E5%BB%BA/PA_Green.png">
 <meta property="article:published_time" content="2019-01-03T05:59:54.000Z">
-<meta property="article:modified_time" content="2020-06-22T17:58:54.457Z">
+<meta property="article:modified_time" content="2019-01-03T05:59:54.000Z">
 <meta property="article:author" content="jygzyc">
 <meta property="article:tag" content="environment">
 <meta name="twitter:card" content="summary">
@@ -50,7 +50,7 @@
     lang   : 'en'
   };
 </script>
-
+<link rel="stylesheet" type="text/css" href="/css/injector.css" />
   <title>win10&deepin双系统搭建 | Ecool</title>
   
 
@@ -240,13 +240,6 @@
 
               <time title="Created: 2019-01-03 13:59:54" itemprop="dateCreated datePublished" datetime="2019-01-03T13:59:54+08:00">2019-01-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-23 01:58:54" itemprop="dateModified" datetime="2020-06-23T01:58:54+08:00">2020-06-23</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -313,7 +306,7 @@
 <p>这样我们就可以安全地进入BIOS了，记得要关闭电源设置里的快速启动和BIOS的某个选项（绝对不是我忘了，绝对不是！）。</p>
 <h1 id="制作启动盘并安装"><a class="markdownIt-Anchor" href="#制作启动盘并安装"></a> 制作启动盘并安装</h1>
 <h2 id="制作启动盘"><a class="markdownIt-Anchor" href="#制作启动盘"></a> 制作启动盘</h2>
-<p>因为deepin官方给了制作启动盘的工具，只要有一个还算大的U盘和deepin系统镜像就行了，如果不想用官方的启动盘制作器，也可以用<a href="https://dev.tencent.com/u/jygzyc/p/blog_photos/git/raw/master/downloads/rufus-3.1.exe" target="_blank" rel="noopener">Rufus</a>。</p>
+<p>因为deepin官方给了制作启动盘的工具，只要有一个还算大的U盘和deepin系统镜像就行了，如果不想用官方的启动盘制作器，也可以用<a target="_blank" rel="noopener" href="https://dev.tencent.com/u/jygzyc/p/blog_photos/git/raw/master/downloads/rufus-3.1.exe">Rufus</a>。</p>
 <h2 id="安装系统"><a class="markdownIt-Anchor" href="#安装系统"></a> 安装系统</h2>
 <p>按上面说的将优先启动项换为U盘，即可开始安装，至于分区嘛，因为我是为了加快速度的，所以就把根目录装在SSD，其余的分到机械硬盘上，具体分区的样子可以看上面那张图，凡是没有盘符有没有特殊标识的都是deepin的分区，之后谁有需要我再把详细图放上来吧。</p>
 <h1 id="显卡驱动nvidia"><a class="markdownIt-Anchor" href="#显卡驱动nvidia"></a> <strong>显卡驱动（Nvidia）</strong></h1>
@@ -321,7 +314,7 @@
 <p>这里是最麻烦，也是最容易出问题的部分，我在这里参照了好多链接，最后才有了解决办法。<br />
 参考链接(其他的记不住了)：</p>
 <ul>
-<li><a href="https://www.cnblogs.com/necp-zwl/p/7024074.html" target="_blank" rel="noopener">https://www.cnblogs.com/necp-zwl/p/7024074.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/necp-zwl/p/7024074.html">https://www.cnblogs.com/necp-zwl/p/7024074.html</a></li>
 </ul>
 </blockquote>
 <h2 id="卡在logo界面"><a class="markdownIt-Anchor" href="#卡在logo界面"></a> 卡在logo界面</h2>
@@ -333,9 +326,9 @@
 <blockquote>
 <p>参考链接：</p>
 <ul>
-<li><a href="http://blog.51cto.com/lidongni/2105254" target="_blank" rel="noopener">http://blog.51cto.com/lidongni/2105254</a></li>
-<li><a href="https://blog.csdn.net/u012950413/article/details/80319126" target="_blank" rel="noopener">https://blog.csdn.net/u012950413/article/details/80319126</a></li>
-<li><a href="https://blog.csdn.net/aaronjny/article/details/79330727" target="_blank" rel="noopener">https://blog.csdn.net/aaronjny/article/details/79330727</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.51cto.com/lidongni/2105254">http://blog.51cto.com/lidongni/2105254</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012950413/article/details/80319126">https://blog.csdn.net/u012950413/article/details/80319126</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/aaronjny/article/details/79330727">https://blog.csdn.net/aaronjny/article/details/79330727</a></li>
 </ul>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install nvidia-driver nvidia-smi</span><br><span class="line">nvidia-smi <span class="comment">#有显卡信息说明驱动安装完成</span></span><br></pre></td></tr></table></figure>
@@ -442,7 +435,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#win10磁盘分区"><span class="nav-number">1.</span> <span class="nav-text"> Win10磁盘分区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#c盘分区"><span class="nav-number">1.1.</span> <span class="nav-text"> C盘分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引导启动"><span class="nav-number">1.2.</span> <span class="nav-text"> 引导启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#制作启动盘并安装"><span class="nav-number">2.</span> <span class="nav-text"> 制作启动盘并安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#制作启动盘"><span class="nav-number">2.1.</span> <span class="nav-text"> 制作启动盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装系统"><span class="nav-number">2.2.</span> <span class="nav-text"> 安装系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#显卡驱动nvidia"><span class="nav-number">3.</span> <span class="nav-text"> 显卡驱动（Nvidia）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#卡在logo界面"><span class="nav-number">3.1.</span> <span class="nav-text"> 卡在logo界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装nvidia驱动"><span class="nav-number">3.2.</span> <span class="nav-text"> 安装Nvidia驱动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#win10%E7%A3%81%E7%9B%98%E5%88%86%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text"> Win10磁盘分区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#c%E7%9B%98%E5%88%86%E5%8C%BA"><span class="nav-number">1.1.</span> <span class="nav-text"> C盘分区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E5%AF%BC%E5%90%AF%E5%8A%A8"><span class="nav-number">1.2.</span> <span class="nav-text"> 引导启动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E5%90%AF%E5%8A%A8%E7%9B%98%E5%B9%B6%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text"> 制作启动盘并安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B6%E4%BD%9C%E5%90%AF%E5%8A%A8%E7%9B%98"><span class="nav-number">2.1.</span> <span class="nav-text"> 制作启动盘</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E7%B3%BB%E7%BB%9F"><span class="nav-number">2.2.</span> <span class="nav-text"> 安装系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%BE%E5%8D%A1%E9%A9%B1%E5%8A%A8nvidia"><span class="nav-number">3.</span> <span class="nav-text"> 显卡驱动（Nvidia）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%A1%E5%9C%A8logo%E7%95%8C%E9%9D%A2"><span class="nav-number">3.1.</span> <span class="nav-text"> 卡在logo界面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85nvidia%E9%A9%B1%E5%8A%A8"><span class="nav-number">3.2.</span> <span class="nav-text"> 安装Nvidia驱动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text"> 总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -458,7 +451,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -505,6 +498,10 @@
         
         
           <li>
+            <a href="/UEFI/UEFI-QandA/" title="UEFI原理与实践笔记（三）_Q&A" target="_blank">UEFI原理与实践笔记（三）_Q&A</a>
+          </li>
+        
+          <li>
             <a href="/Android/Native/Android-Native-and-security-introduction-part-1/" title="Android Native 入门（1）" target="_blank">Android Native 入门（1）</a>
           </li>
         
@@ -514,10 +511,6 @@
         
           <li>
             <a href="/UEFI/HelloUEFI/" title="UEFI原理与实践笔记-Hello UEFI" target="_blank">UEFI原理与实践笔记-Hello UEFI</a>
-          </li>
-        
-          <li>
-            <a href="/bitcoin/bitcoin-address/" title="比特币密钥和地址" target="_blank">比特币密钥和地址</a>
           </li>
         
       </ul>
