@@ -17,7 +17,7 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>UEFI原理与实践笔记（三）_Q&amp;A</title>
+    <title>UEFI原理与实践笔记_Q&amp;A</title>
     <link href="https://jygzyc.github.io/UEFI/UEFI-QandA/"/>
     <id>https://jygzyc.github.io/UEFI/UEFI-QandA/</id>
     <published>2020-11-14T17:18:36.000Z</published>
@@ -27,7 +27,8 @@
     
       &lt;blockquote&gt;
 &lt;p&gt;UEFI原理与实践笔记（三）-Q&amp;amp;A&lt;br /&gt;
-记录一下搭建环境和Hello World中出现的问题&lt;/p&gt;
+记录一下搭建环境和Hello World中出现的问题&lt;br /&gt;
+EDK2-stable-202008 &amp;amp;&amp;amp; win10 pro 2004&lt;/p&gt;
 &lt;/blockquote&gt;
     
     </summary>
