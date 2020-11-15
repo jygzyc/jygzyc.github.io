@@ -193,7 +193,7 @@
 
   <url>
     <loc>https://jygzyc.github.io/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -201,119 +201,119 @@
   
   <url>
     <loc>https://jygzyc.github.io/tags/Android/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/tags/Native/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/tags/program/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/tags/c/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/writeup/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/ctf/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/reverse/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/hexo/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/reserve/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/KnowledgePoints/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/UEFI/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/Windows-Exploit/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/life/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/article/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/tags/environment/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/tags/python/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/writeup/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/ctf/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/reverse/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/hexo/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/reserve/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/KnowledgePoints/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/UEFI/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/Windows-Exploit/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/environment/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/life/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/tags/article/</loc>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/tags/bitcoin/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -322,84 +322,84 @@
   
   <url>
     <loc>https://jygzyc.github.io/categories/Android/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/program/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/categories/writeup/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/categories/hexo/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/Android/Native/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/categories/KnowledgePoints/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/program/c/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/categories/writeup/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/categories/hexo/</loc>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/categories/KnowledgePoints/</loc>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/UEFI/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/Windows-Exploit/</loc>
-    <lastmod>2020-11-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jygzyc.github.io/categories/article/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/environment/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jygzyc.github.io/categories/article/</loc>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jygzyc.github.io/categories/bitcoin/</loc>
-    <lastmod>2020-11-14</lastmod>
+    <lastmod>2020-11-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
